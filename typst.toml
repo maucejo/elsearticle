@@ -1,0 +1,9 @@
+[package]
+name = "elsearticle"
+version = "0.1.0"
+authors = ["Mathieu Aucejo"]
+license = "MIT"
+description = "Conversion of the LaTeX elsearticle.cls"
+entrypoint = "src/elsearticle.typ"
+
+
