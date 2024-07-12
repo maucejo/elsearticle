@@ -206,7 +206,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 *Other features*
 
 - [ ] Give the user more customization ability for the `link`
-- [ ] Line numbering
+- [ ] Line numbering - PR is open on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
 
 
 
