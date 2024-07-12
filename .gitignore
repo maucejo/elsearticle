@@ -1,6 +1,3 @@
 .github
-.typstignore
-/scripts
-Justfile
-
 /docs/manual.typ
+/example/example.pdf
