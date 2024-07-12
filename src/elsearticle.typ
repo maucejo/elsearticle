@@ -86,7 +86,7 @@
   set text(size: font-size.normal, font: "New Computer Modern")
 
   // Conditional linspacing
-  let linespacing = if format == "preprint" {linespacing-preprint} else {linespacing-review}
+  let linespacing = if format == "review" {linespacing-review} else {linespacing-preprint}
 
   // Heading
   set heading(numbering: "1.")
