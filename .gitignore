@@ -1,6 +1,6 @@
 .github
 .typstignore
-scripts
+/scripts
 Justfile
 
-docs/manual.typ
+/docs/manual.typ
