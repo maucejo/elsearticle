@@ -203,9 +203,10 @@ The #package[Elsearticle] template is still in development. Here are some of the
 - [x] Proper referencing of equations w.r.t. the context
 - [ ] Numbering each equation of a system as "(1a)" -- _On going discussions at the Typst dev level_
 
-*Links*
+*Other features*
 
-- [ ] Give the user more customization ability
+- [ ] Give the user more customization ability for the `link`
+- [ ] Line numbering
 
 
 
