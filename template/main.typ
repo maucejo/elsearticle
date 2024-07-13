@@ -21,7 +21,8 @@
   journal: "Encyclopedia Galactica",
   abstract: abstract,
   keywords: ("Psychohistory", "Encyclopedia"),
-  format: "review"
+  format: "review",
+  bibliography-file: "../example/refs.bib"
 )
 
 = Introduction
