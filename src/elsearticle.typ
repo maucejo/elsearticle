@@ -301,7 +301,5 @@
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
-  show: rest => columns(els-columns, rest)
-
-  body
+  show: rest => columns(els-columns, body)
 }
