@@ -306,4 +306,5 @@
   // bibliography
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
+
 }
