@@ -43,9 +43,6 @@
     numbering: "(a)",
 )
 
-// Bibliography
-#let biblio =  bibliography.with(title: "References")
-
 #let appendix(body) = {
   set heading(numbering: "A.1.")
   // Reset heading counter
@@ -298,6 +295,7 @@
   }
 
   // bibliography
+  set bibliography(title: "References")
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
