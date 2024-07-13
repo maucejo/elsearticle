@@ -5,5 +5,19 @@ authors = ["Mathieu Aucejo"]
 license = "MIT"
 description = "Conversion of the LaTeX elsearticle.cls"
 entrypoint = "src/elsearticle.typ"
+exclude = [
+	".github",
+	"docs",
+	"scripts",
+	"tests",
+	".typstignore",
+	"Justfile",
+	"thumbnails",
+]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnails/1.png"
 
 
