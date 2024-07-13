@@ -152,4 +152,4 @@ $ <eq>
     $
 ]
 
-#biblio("refs.bib")
+#bibliography("refs.bib")

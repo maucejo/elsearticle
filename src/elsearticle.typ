@@ -43,9 +43,6 @@
     numbering: "(a)",
 )
 
-// Bibliography
-#let biblio =  bibliography.with(title: "References")
-
 // Appendix
 #let appendix(body) = {
   set heading(numbering: "A.1.")
@@ -301,10 +298,10 @@
     line(length: 100%)
   }
 
-  show: columns(els-columns, body)
-
   // bibliography
+  set bibliography(title: "References")
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
+  show: columns(els-columns, body)
 }
