@@ -46,6 +46,7 @@
 // Bibliography
 #let biblio =  bibliography.with(title: "References")
 
+// Appendix
 #let appendix(body) = {
   set heading(numbering: "A.1.")
   // Reset heading counter
@@ -94,6 +95,9 @@
 
   // Number of columns
   numcol: 1,
+
+  // Bibliography
+  bibliography-file: none,
 
   // The document's content.
   body,
@@ -297,9 +301,9 @@
     line(length: 100%)
   }
 
+  show: columns(els-columns, body)
+
   // bibliography
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
-
-  show: rest => columns(els-columns, body)
 }
