@@ -76,6 +76,7 @@ After importing #package[Elsearticle], you have to initialize the template by a 
   journal: none,
   keywords: none,
   format: "preprint",
+  numcol: 1,
   [body])
 )[#argument("title", default: none, types: "string")[Title of the paper]
 
@@ -120,7 +121,17 @@ keywords: ("Keyword 1", "Keyword 2")
 
 #argument("format", default: "review", types: "string")[Format of the paper. Possible values are "preprint", "review", "1p", "3p", "5p", and "final"
 
-#ibox[Only the "review" and the "preprint" formats are currently supported.]
+#ibox[Only the "final" format is currently missing.]
+]
+
+#argument("numcol", default: 1, types: "number")[Number of columns of the paper. Possible values are 1 and 2
+
+#ibox[According to the documentation of `elsearticle.cls` (see #link("https://assets.ctfassets.net/o78em1y1w4i4/3ro3yQff1q67JHmLi1sAqV/1348e3852f277867230fc4b84a801734/elsdoc-1.pdf", "here")), the number of columns is related to the format of the paper:
+- 1p: Single column only
+- 3p: Single or double column possible
+- 5p: Double column only
+
+To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by default and restricted to 1 or 2.]
 ]
 ]
 
@@ -183,9 +194,9 @@ The #package[Elsearticle] template is still in development. Here are some of the
 
 - [x] Preprint
 - [x] Review
-- [ ] 1p
-- [ ] 3p
-- [ ] 5p
+- [x] 1p
+- [x] 3p
+- [x] 5p
 - [ ] Final
 
 *Environement*
@@ -205,8 +216,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 
 *Other features*
 
-- [ ] Give the user more customization ability for the `link`
-- [ ] Line numbering - PR is open on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
+- [ ] Line numbering - a PR is currently open on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
 
 
 

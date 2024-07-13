@@ -1,3 +1,9 @@
+// elsearticle.typ
+// Author: Mathieu Aucejo
+// Github: https://github.com/maucejo
+// License: MIT
+// Date : 07/2024
+
 #let font-size = (
   script: 7pt,
   footnote: 8pt,
@@ -7,15 +13,22 @@
   title: 17pt,
 )
 
-#let linespacing-preprint = 1em
-#let linespacing-review = 1.5em
+#let linespace = (
+  preprint: 1em,
+  review: 1.5em,
+)
+
 #let indent-size = 2em
 
-#let isappendix = state("isappendix", false)
+#let margins = (
+  review: (left: 105pt, right: 105pt, top: 130pt, bottom: 130pt),
+  preprint: (left: 105pt, right: 105pt, top: 130pt, bottom: 130pt),
+  one_p: (left: 105pt, right: 105pt, top: 140pt, bottom: 140pt),
+  three_p: (left: 64pt, right: 64pt, top: 110pt, bottom: 110pt),
+  five_p: (left: 37pt, right: 37pt, top: 80pt, bottom: 80pt)
+)
 
-// Maths
-#let bm(a) = $upright(bold(#a))$
-#let sf(a) = $upright(sans(#a))$
+#let isappendix = state("isappendix", false)
 
 // Equations
 #let nonumeq(body) = {
@@ -79,19 +92,33 @@
   // For integrating future formats (1p, 3p, 5p, final)
   format: "review",
 
+  // Number of columns
+  numcol: 1,
+
   // The document's content.
   body,
 ) = {
   // Text
   set text(size: font-size.normal, font: "New Computer Modern")
 
-  // Conditional linspacing
-  let linespacing = if format == "review" {linespacing-review} else {linespacing-preprint}
+  // Conditional formatting
+  let els-linespace = if format == "review" {linespace.review} else {linespace.preprint}
+
+  let els-margin = if format == "review" {margins.review}
+  else if format == "preprint" {margins.preprint}
+  else if format == "1p" {margins.one_p}
+  else if format == "3p" {margins.three_p}
+  else if format == "5p" {margins.five_p}
+  else {margins.review}
+
+  let els-columns = if format == "1p" {1}
+  else if format == "5p" {2}
+  else {if numcol > 2 {2} else {if numcol <= 0  {1} else {numcol}}}
 
   // Heading
   set heading(numbering: "1.")
 
-  show heading: it => block(above: linespacing, below: linespacing)[
+  show heading: it => block(above: els-linespace, below: els-linespace)[
     #if it.numbering != none {
       if it.level == 1 {
         set par(leading: 0.75em, hanging-indent: 1.25em)
@@ -177,13 +204,13 @@
   ]
 
   // Paragraph
-  set par(justify: true, first-line-indent: indent-size, leading: linespacing)
+  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
 
   // Page
   set page(
         paper: "a4",
         numbering: "1",
-        margin: (left: 3.75cm, right: 3.75cm, top: 4.84cm, bottom: 4.84cm),
+        margin: els-margin,
 
         // Set journal name and date
         footer: context{
@@ -273,6 +300,8 @@
   // bibliography
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
+
+  show: rest => columns(els-columns, rest)
 
   body
 }
