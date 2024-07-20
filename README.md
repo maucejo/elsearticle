@@ -74,7 +74,7 @@ The `elsearticle` template provides the `#nonumeq()` function to create unnmbere
 - [x] 1p
 - [x] 3p
 - [x] 5p
-- [ ] Final
+- [ ] Final - Work started by @JamesXx
 
 *Environment*
 

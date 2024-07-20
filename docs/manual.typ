@@ -196,7 +196,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 - [x] 1p
 - [x] 3p
 - [x] 5p
-- [ ] Final
+- [ ] Final - Work started by \@JamesXx
 
 *Environment*
 
