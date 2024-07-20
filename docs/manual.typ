@@ -72,7 +72,6 @@ After importing #package[Elsearticle], you have to initialize the template by a 
   title: none,
   authors: (),
   abstract: none,
-  paper-size: "a4",
   journal: none,
   keywords: none,
   format: "preprint",
@@ -199,7 +198,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 - [x] 5p
 - [ ] Final
 
-*Environement*
+*Environment*
 
 - [x] Implementation of the `appendix` environment
 

@@ -1,64 +1,101 @@
-# The `my-package` Package
+# The `elsearticle` template
 <div align="center">Version 0.1.0</div>
 
-A short description about the project and/or client.
+`elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsearticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
 
-## Template adaptation checklist
+## Basic usage
 
-- [ ] Fill out `README.md`
-  - Change the `my-package` package name, including code snippets
-  - Check section contents and/or delete sections that don't apply
-- [ ] Check and/or replace `LICENSE` by something that suits your needs
-- [ ] Fill out `typst.toml`
-  - See also the [typst/packages README](https://github.com/typst/packages/?tab=readme-ov-file#package-format)
-- [ ] Adapt Repository URLs in `CHANGELOG.md`
-  - Consider only committing that file with your first release, or removing the "Initial Release" part in the beginning
-- [ ] Adapt or deactivate the release workflow in `.github/workflows/release.yml`
-  - to deactivate it, delete that file or remove/comment out lines 2-4 (`on:` and following)
-  - to use the workflow
-    - [ ] check the values under `env:`, particularly `REGISTRY_REPO`
-    - [ ] if you don't have one, [create a fine-grained personal access token](https://github.com/settings/tokens?type=beta) with [only Contents permission](https://stackoverflow.com/a/75116350/371191) for the `REGISTRY_REPO`
-    - [ ] on this repo, create a secret `REGISTRY_TOKEN` (at `https://github.com/[user]/[repo]/settings/secrets/actions`) that contains the so created token
+This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](/docs/manual.pdf).
 
-    if configured correctly, whenever you create a tag `v...`, your package will be pushed onto a branch on the `REGISTRY_REPO`, from which you can then create a pull request against [typst/packages](https://github.com/typst/packages/)
-- [ ] remove/replace the example test case
-- [ ] (add your actual code, docs and tests)
-- [ ] remove this section from the README
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
+To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/my-package:0.1.0": *
-
-#show: my-show-rule.with()
-#my-func()
+#import "@preview/elsearticle:0.1.0": *
 ```
 
-### Installation
+### Initializing the template
 
-A step by step guide that will tell you how to get the development environment up and running. This should example how to clone the repo and where to (maybe a link to the typst documentation on it), along with any pre-requisite software and installation steps.
+After importing `elsearticle`, you have to initialize the template by a show rule with the `#elsearticle()` command. This function takes an optional argument to specify the title of the document.
 
+* `title`: Title of the paper
+* `author`: List of the authors of the paper
+* `abstract`: Abstract of the paper
+* `journal`: Name of the journal
+* `keywords`: List of keywords of the paper
+* `format`: Format of the paper. Possible values are `preprint`, `review`, `1p`, `3p`, `5p`
+* `numcol`: Number of columns of the paper. Possible values are 1 and 2
+
+## Additional features
+
+The `elsearticle` template provides additional features to help you format your document properly.
+
+### Appendix
+
+To activate the appendix environment, all you have to do is to place the following command in your document:
+```typ
+#show: appendix
+
+// Appendix content here
 ```
-$ First step
-$ Another step
-$ Final step
-```
 
-## Usage
+### Subfigures
 
-A more in-depth description of usage. Any template arguments? A complicated example that showcases most if not all of the functions the package provides? This is also an excellent place to signpost the manual.
+Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. To create a subfigure, you can use the following syntax:
 
 ```typ
-#import "@preview/my-package:0.1.0": *
-
-#let my-complicated-example = ...
+#figure(
+  grid(columns: 2, gutter: 1em,
+  [#subfigure(image("image1.png")) <figa>],
+  [#subfigure(image("image2.png")) <figb>]
+  ),
+  caption: [(a) Left image and (b) Right image],
+) <fig>
 ```
 
-## Additional Documentation and Acknowledgments
+>**NOTE**
+>The `subpar` package is not use in this template because it doesn't seem to allow separate supplements : one for the caption and one for referencing the element. In the **Guide for authors**, it is indicated to cite a figure as "Fig. 1" in the text.
 
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+### Equations
+
+The `elsearticle` template provides the `#nonumeq()` function to create unnmbered equations. The latter function can be used as follows:
+```typ
+#nonumeq[$
+  y = f(x)
+  $
+]
+```
+
+## Roadmap
+
+*Article format*
+
+- [x] Preprint
+- [x] Review
+- [x] 1p
+- [x] 3p
+- [x] 5p
+- [ ] Final
+
+*Environment*
+
+- [x] Implementation of the `appendix` environment
+
+*Figures and tables*
+
+- [x] Implementation of the `subfigure` environment
+- [x] Proper referencing of figure, subfigures and tables w.r.t. the context
+- [x] Recreation of the `link` to cross-reference figures, subfigures and tables
+
+*Equations*
+
+- [x] Proper referencing of equations w.r.t. the context
+- [ ] Numbering each equation of a system as "(1a)" -- _On going discussions at the Typst dev level_
+
+*Other features*
+
+- [ ] Line numbering - a PR is currently open on the Typst repo -- See [here](https://github.com/typst/typst/pull/4516")
+
+## License
+MIT licensed
+
+Copyright (C) 2024 Mathieu AUCEJO (maucejo)
