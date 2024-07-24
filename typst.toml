@@ -6,15 +6,7 @@ license = "MIT"
 description = "Conversion of the LaTeX elsearticle.cls"
 entrypoint = "src/elsearticle.typ"
 categories = ["report"]
-exclude = [
-	".github",
-	"docs",
-	"scripts",
-	"tests",
-	".typstignore",
-	"Justfile",
-	"thumbnails",
-]
+repository = "https://github.com/maucejo/elsearticle"
 
 [template]
 path = "template"
