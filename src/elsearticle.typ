@@ -3,7 +3,6 @@
 // Github: https://github.com/maucejo
 // License: MIT
 // Date : 07/2024
-#import "@preview/subpar:0.1.1"
 
 #let font-size = (
   script: 7pt,
@@ -37,6 +36,13 @@
   body
 }
 
+// Figures
+#let subfigure = figure.with(
+    kind: "subfigure",
+    supplement: [],
+    numbering: "(a)",
+)
+
 // Appendix
 #let appendix(body) = {
   set heading(numbering: "A.1.")
@@ -44,12 +50,17 @@
   counter(heading).update(0)
 
   // Equation numbering
-  let numbering-eq = n => numbering("(A.1)", counter(heading).get().first(), n)
+  let numbering-eq = n => {
+    let h1 = counter(heading).get().first()
+    numbering("(A.1)", h1, n)
+  }
   set math.equation(numbering: numbering-eq)
 
   // Figure and Table numbering
-  let numbering-fig = n => numbering("A.1", counter(heading).get().first(), n)
-
+  let numbering-fig = n => {
+    let h1 = counter(heading).get().first()
+    numbering("A.1", h1, n)
+  }
   show figure.where(kind: image): set figure(numbering: numbering-fig)
   show figure.where(kind: table): set figure(numbering: numbering-fig)
 
@@ -135,15 +146,63 @@
   // Equations
   set math.equation(numbering: "(1)", supplement: [Eq.])
 
-  // Figures and Tables
-  show figure.where(kind: table): set figure.caption(position: top)
-  set ref(supplement: it => {
-    if it.func() == figure and it.kind == image {
-      "Fig."
+  // Figures, subfigures, tables
+  // Updates reference counter properly
+  show ref: it => {
+    let el = it.element
+    if el != none and el.func() == figure and el.kind == "subfigure" {
+        context{
+          let fignum = counter(figure.where(kind: image)).at(here()).first() + 1
+          let subfignum = numbering("a", counter(figure.where(kind: "subfigure")).at(el.location()).first())
+          if isappendix.get(){
+            let heading-counter = numbering("A.1", counter(heading).get().first())
+            link(it.target, [Fig. #heading-counter.#fignum#subfignum])
+          } else {
+            link(it.target, [Fig. #fignum#subfignum])
+          }
+        }
+      } else if el != none and el.func() == figure and repr(el.kind) == "image" {
+        let fignum = counter(figure.where(kind: image)).at(el.location()).first()
+        if isappendix.get() {
+          let heading-counter = numbering("A.1", counter(heading).get().first())
+          link(it.target, [Fig. #heading-counter.#fignum])
+        } else {
+          link(it.target, [Fig. #fignum])
+        }
     } else {
-      it.supplement
+      it
     }
-  })
+  }
+
+  // Formatting figures and tables properly
+  show figure: it => align(center)[
+    #if repr(it.kind) == "table" {
+    block(
+      [
+        #text(it.caption, top-edge: 0.15em, size: font-size.small)
+        #it.body
+     ]
+    )
+    } else {
+      if repr(it.kind).slice(0, 5) == "\"subf" {
+        block(
+        [
+          #it.body
+          #it.supplement #it.counter.display(it.numbering) #it.caption
+        ]
+        )
+      } else {
+        block(
+        [
+          #it.body
+          #v(0.5em)
+          #align(left)[#text(it.caption, top-edge: 0.15em, size: font-size.small)]
+        ]
+        )
+        counter(figure.where(kind: "subfigure")).update(0)
+      }
+    }
+  ]
 
   // Paragraph
   set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
