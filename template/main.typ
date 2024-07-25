@@ -95,15 +95,22 @@ Below is @fig:logo.
 
 Below are @figa and @figb, which are part of @fig:typst.
 
-#figure(
-  grid(columns: 2, gutter: 1em,
-  [#subfigure(image("images/typst-logo.svg")) <figa>],
-  [#subfigure(image("images/typst-logo.svg"))<figb>]
-  ),
-  caption: [(a) Left image and (b) Right image],
-) <fig:typst>
+#subpar.grid(
+  figure(image("images/typst-logo.svg"), caption: []), <figa>,
+  figure(image("images/typst-logo.svg"), caption: []), <figb>,
+  columns: (1fr, 1fr),
+  caption: [A figure composed of two sub figures.],
+  label: <fig:typst>,
+)
 
 #show: appendix
+#let sub-figure-numbering = (m, n) => numbering("A.1a", counter(heading).get().first(), m, n)
+#let figure-numbering = n => numbering("A.1", counter(heading).get().first(), n)
+
+#let subpar-grid = subpar.grid.with(
+  numbering: figure-numbering,
+  numbering-sub-ref: sub-figure-numbering,
+)
 
 = Appendix A
 
@@ -120,13 +127,13 @@ In @fig:app
 
 Below are @figa-app and @figb-app, which are part of @fig:typst-app.
 
-#figure(
-  grid(columns: 2, gutter: 1em,
-  [#subfigure(image("images/typst-logo.svg")) <figa-app>],
-  [#subfigure(image("images/typst-logo.svg"))<figb-app>]
-  ),
-  caption: [(a) Left image and (b) Right image],
-) <fig:typst-app>
+#subpar-grid(
+  figure(image("images/typst-logo.svg"), caption: []), <figa-app>,
+  figure(image("images/typst-logo.svg"), caption: []), <figb-app>,
+  columns: (1fr, 1fr),
+  caption: [A figure composed of two sub figures.],
+  label: <fig:typst-app>,
+)
 
 == Tables
 
@@ -150,5 +157,16 @@ $ <eq>
     y = g(x)
     $
 ]
+
+= Conclusion
+
+Below are @figa-app2 and @figb-app2, which are part of @fig:typst-app2.
+#subpar-grid(
+  figure(image("images/typst-logo.svg"), caption: []), <figa-app2>,
+  figure(image("images/typst-logo.svg"), caption: []), <figb-app2>,
+  columns: (1fr, 1fr),
+  caption: [A figure composed of two sub figures.],
+  label: <fig:typst-app2>,
+)
 
 #bibliography("refs.bib")
