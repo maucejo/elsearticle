@@ -1,16 +1,16 @@
 # The `elsearticle` template
-<div align="center">Version 0.1.0</div>
+<div align="center">Version 0.2.0</div>
 
 `elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsearticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
 
 ## Basic usage
 
-This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](/docs/manual.pdf).
+This section provides the minimal amount of information to get started with the template. For more detailed information, see the [manual](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf).
 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:0.1.0": *
+#import "@preview/elsearticle:0.2.0": *
 ```
 
 ### Initializing the template

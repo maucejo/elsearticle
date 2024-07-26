@@ -1,5 +1,11 @@
+# [v0.2.0](https://github.com/maucejo/elsearticle/releases/tags/v0.2.0)
+
+- Add support for the `subpar` package. The API for `subfigure` is now a wraper around `subpar.grid` with `numbering` and `numbering-sub-ref` adapted to the `context` (main body or `appendix`)
+- The previous API for `subfigure` is is deprecated and no more supported
+- Simplify the customization of `ref` and `figure`
+
+
 # [v0.1.0](https://github.com/maucejo/elsearticle/releases/tags/v0.1.0)
-Initial Release
 
 *Article format*
 

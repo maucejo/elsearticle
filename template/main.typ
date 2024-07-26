@@ -1,56 +1,44 @@
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:0.2.0": *
 
 #let abstract = lorem(100)
 
 #show: elsearticle.with(
-  title: "Psychohistory: a primer",
+  title: "Title of the paper",
   authors: (
     (
-      name: "H. Seldon",
-      affiliation: "Psychohistory laboratory, Streeling university, Trantor",
-      corr: "hari.seldon@str.edu",
+      name: "A. Author",
+      affiliation: "University A, City A, Country A",
+      corr: "a.author@univa.edu",
       id: "a",
     ),
     (
-      name: "G. Dornick",
-      affiliation: "Mathematics laboratory, Synnax University, Synnax",
+      name: "B. Author",
+      affiliation: "University B, City B, Country B",
       corr: none,
       id: "b"
     ),
   ),
-  journal: "Encyclopedia Galactica",
+  journal: "Name of the Journal",
   abstract: abstract,
-  keywords: ("Psychohistory", "Encyclopedia"),
-  format: "preprint"
+  keywords: ("keyword 1", "keyword 2"),
+  format: "review"
 )
 
 = Introduction
 
 #lorem(100)
 
-= Foundations
+= Section 1
 
-Psychohistory depends on the idea that, while one cannot foresee the actions of a particular individual, the laws of statistics as applied to large groups of people could predict the general flow of future events. Asimov used the analogy of a gas: An observer has great difficulty in predicting the motion of a single molecule in a gas, but with the kinetic theory can predict the mass action of the gas to a high level of accuracy @Sel10. Seldon applied this concept to the population of the Galactic Empire, which numbered one quintillion, by defining two axioms: #v(1em)
+#lorem(50)
 
-- the population whose behaviour was modelled should be sufficiently large to represent the entire society.
+== Subsection 1
 
-- the population should remain in ignorance of the results of the application of psychohistorical analyses because if it is aware, the group changes its behaviour. #v(1em)
-
-Ebling Mis added these axioms:
-
-- there would be no fundamental change in the society human reactions to stimuli would remain constant. #v(1em)
-
-Golan Trevize in Foundation and Earth added this axiom:
-
-- humans are the only sentient intelligence in the galaxy. #v(1em)
-
-== Probability and Psychohistory
-
-Psychohistory relies on the Seldon central limit theorem#footnote[It is actually the classical central limit theorem #emoji.face.lick]:
+#lorem(10) (see @eq1) @Aut10.
 
 $
-sqrt(n) (macron(X)_n - mu) / sigma-> cal(N)(0, 1),
-$
+y = a x +b
+$ <eq1>
 where ...
 
 == Features
@@ -63,16 +51,12 @@ Below is @tab:tab1.
   table(
   columns: 3,
   table.header(
-    [Substance],
-    [Subcritical °C],
-    [Supercritical °C],
+    [*Header 1*],
+    [*Header 2*],
+    [*Header 3*],
   ),
-  [Hydrochloric Acid],
-  [12.0], [92.1],
-  [Sodium Myreth Sulfate],
-  [16.6], [104],
-  [Potassium Hydroxide],
-  table.cell(colspan: 2)[24.7],
+  [Row 1], [12.0], [92.1],
+  [Row 2], [16.6], [104],
 )
 }
 
@@ -87,7 +71,7 @@ Below is @tab:tab1.
 Below is @fig:logo.
 
 #figure(
-  image("images/typst-logo.svg", width: 50%),
+  image("../template/images/typst-logo.svg", width: 50%),
   caption : [Typst logo - Credit: \@fenjalien]
 ) <fig:logo>
 
@@ -95,13 +79,13 @@ Below is @fig:logo.
 
 Below are @figa and @figb, which are part of @fig:typst.
 
-#figure(
-  grid(columns: 2, gutter: 1em,
-  [#subfigure(image("images/typst-logo.svg")) <figa>],
-  [#subfigure(image("images/typst-logo.svg"))<figb>]
-  ),
-  caption: [(a) Left image and (b) Right image],
-) <fig:typst>
+#subfigure(
+figure(image("../template/images/typst-logo.svg"), caption: []), <figa>,
+figure(image("../template/images/typst-logo.svg"), caption: []), <figb>,
+columns: (1fr, 1fr),
+caption: [(a) Left image and (b) Right image],
+label: <fig:typst>,
+)
 
 #show: appendix
 
@@ -112,7 +96,7 @@ Below are @figa and @figb, which are part of @fig:typst.
 In @fig:app
 
 #figure(
-  image("images/typst-logo.svg", width: 50%),
+  image("../template/images/typst-logo.svg", width: 50%),
   caption : [Books cover]
 ) <fig:app>
 
@@ -120,13 +104,13 @@ In @fig:app
 
 Below are @figa-app and @figb-app, which are part of @fig:typst-app.
 
-#figure(
-  grid(columns: 2, gutter: 1em,
-  [#subfigure(image("images/typst-logo.svg")) <figa-app>],
-  [#subfigure(image("images/typst-logo.svg"))<figb-app>]
-  ),
-  caption: [(a) Left image and (b) Right image],
-) <fig:typst-app>
+#subfigure(
+figure(image("../template/images/typst-logo.svg"), caption: []), <figa-app>,
+figure(image("../template/images/typst-logo.svg"), caption: []), <figb-app>,
+columns: (1fr, 1fr),
+caption: [(a) Left image and (b) Right image],
+label: <fig:typst-app>,
+)
 
 == Tables
 
@@ -151,4 +135,4 @@ $ <eq>
     $
 ]
 
-#bibliography("refs.bib")
+#bibliography("../template/refs.bib")

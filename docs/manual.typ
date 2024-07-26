@@ -111,16 +111,14 @@ authors: (
 
 #argument("keywords", default: none, types: "array")[List of the keywords of the paper
 
-Each element of the #dtype("array") is a #dtype("string") representing a keyword.
+Each element of the #dtype("array") is a #dtype("string") representing a keyword
 
 #codesnippet[```typc
 keywords: ("Keyword 1", "Keyword 2")
 ```]
 ]
 
-#argument("format", default: "review", types: "string")[Format of the paper. Possible values are "preprint", "review", "1p", "3p", "5p", and "final"
-
-#ibox[Only the "final" format is currently missing.]
+#argument("format", default: "review", types: "string")[Format of the paper. Possible values are "preprint", "review", "1p", "3p" and "5p"
 ]
 
 #argument("numcol", default: 1, types: "number")[Number of columns of the paper. Possible values are 1 and 2
@@ -153,24 +151,23 @@ To activate the appendix environment, all you have to do is to place the followi
 
 === Subfigures
 
-Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. To create a subfigure, you can use the following syntax:
+Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. It is based on the #package[subpar] that allows you to create subfigures and properly reference them.
+
+To create a subfigure, you can use the following syntax:
 
 #codesnippet[
   ```typc
-  #figure(
-    grid(columns: 2, gutter: 1em,
-    [#subfigure(image("image1.png")) <figa>],
-    [#subfigure(image("image2.png")) <figb>]
-    ),
+  #subfigure(
+    figure(image("image1.png"), caption: []), <figa>,
+    figure(image("image2.png"), caption: []), <figb>,
+    columns: (1fr, 1fr),
     caption: [(a) Left image and (b) Right image],
-) <fig>
+    label: <fig>
+  )
   ```
 ]
 
-#ibox[The #cmd("ref") function is customized to properly handle the subfigures reference (e.g. Fig. 1a) and cross-reference (via the #cmd("link") function).
-
-More generally, the #cmd["figure"] function is also modified to follow the guidelines of the #LaTeX elsearticle class.
-]
+#ibox[The #cmd("subfigure") function is a wrapper around the #cmd[subpar.grid] function. The numbering is adapted to the context of the document (normal section or appendix).]
 
 === Equations
 
@@ -196,7 +193,6 @@ The #package[Elsearticle] template is still in development. Here are some of the
 - [x] 1p
 - [x] 3p
 - [x] 5p
-- [ ] Final - Work started by \@JamesXx
 
 *Environment*
 
