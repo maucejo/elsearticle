@@ -1,4 +1,5 @@
-#import "@preview/elsearticle:0.2.0": *
+// #import "@preview/elsearticle:0.2.0": *
+#import "../src/elsearticle.typ": *
 
 #let abstract = lorem(100)
 
@@ -135,4 +136,4 @@ $ <eq>
     $
 ]
 
-#bibliography("../template/refs.bib")
+#bibliography("refs.bib")

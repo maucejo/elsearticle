@@ -11,6 +11,6 @@ repository = "https://github.com/maucejo/elsearticle"
 [template]
 path = "template"
 entrypoint = "main.typ"
-thumbnail = "thumbnails/1.png"
+thumbnail = "thumbnails/main.png"
 
 
