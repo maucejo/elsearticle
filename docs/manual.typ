@@ -151,7 +151,7 @@ To activate the appendix environment, all you have to do is to place the followi
 
 === Subfigures
 
-Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. It is based on the #package[subpar] that allows you to create subfigures and properly reference them.
+Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. It is based on the #package[subpar] package that allows you to create subfigures and properly reference them.
 
 To create a subfigure, you can use the following syntax:
 

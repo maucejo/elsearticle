@@ -40,16 +40,16 @@ To activate the appendix environment, all you have to do is to place the followi
 
 ### Subfigures
 
-Subfigures are not built-in features of Typst, but the #package[Elsearticle] template provides a way to handle them. To create a subfigure, you can use the following syntax:
+Subfigures are not built-in features of Typst, but the `elsearticle` template provides a way to handle them. It is based on the `subpar` package that allows you to create subfigures and properly reference them.
 
 ```typ
-#figure(
-  grid(columns: 2, gutter: 1em,
-  [#subfigure(image("image1.png")) <figa>],
-  [#subfigure(image("image2.png")) <figb>]
-  ),
-  caption: [(a) Left image and (b) Right image],
-) <fig>
+  #subfigure(
+    figure(image("image1.png"), caption: []), <figa>,
+    figure(image("image2.png"), caption: []), <figb>,
+    columns: (1fr, 1fr),
+    caption: [(a) Left image and (b) Right image],
+    label: <fig>
+  )
 ```
 
 >**NOTE**
