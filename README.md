@@ -52,9 +52,6 @@ Subfigures are not built-in features of Typst, but the `elsearticle` template pr
   )
 ```
 
->**NOTE**
->The `subpar` package is not use in this template because it doesn't seem to allow separate supplements : one for the caption and one for referencing the element. In the **Guide for authors**, it is indicated to cite a figure as "Fig. 1" in the text.
-
 ### Equations
 
 The `elsearticle` template provides the `#nonumeq()` function to create unnmbered equations. The latter function can be used as follows:
