@@ -1,5 +1,8 @@
-# The `elsearticle` template
-<div align="center">Version 0.2.0</div>
+# Elsearticle template
+
+[![Generic badge](https://img.shields.io/badge/Version-0.2.0-cornflowerblue.svg)]()
+[![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/Cnam_thesis_template/blob/main/LICENSE)
+[![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/Cnam_thesis_template/blob/main/docs/manual.pdf)
 
 `elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsearticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
 
