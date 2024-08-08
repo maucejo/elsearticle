@@ -1,3 +1,7 @@
+# [v0.2.1](https://github.com/maucejo/elsearticle/releases/tags/v0.2.1)
+
+- Change default font to `Lato` for body and `Lete Sans Math` for equations
+
 # [v0.2.0](https://github.com/maucejo/elsearticle/releases/tags/v0.2.0)
 
 - Add support for the `subpar` package. The API for `subfigure` is now a wraper around `subpar.grid` with `numbering` and `numbering-sub-ref` adapted to the `context` (main body or `appendix`)
