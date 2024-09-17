@@ -152,7 +152,7 @@
   ]
 
   // Equations
-  set math.equation(numbering: n => numbering("(1a)", n) , supplement: [Eq.])
+  set math.equation(numbering: n => numbering("(1)", n) , supplement: [Eq.])
 
   // Figures, subfigures, tables
   show figure.where(kind: table): set figure.caption(position: top)
