@@ -29,7 +29,7 @@
 
 #show: mantys.with(
   name: "Elsearticle class for Typst",
-  version: "0.1.0",
+  version: "0.2.1",
   date: datetime.today(),
   license: "MIT",
   authors: ("Mathieu Aucejo"),
@@ -53,7 +53,7 @@ This manual provides an overview of the features of the #package[Elsearticle] te
 
 To use the #package[Elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:0.1.0": *
+#import "@preview/elsearticle:0.2.1": *
 ```
 ]
 
@@ -211,7 +211,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 
 *Other features*
 
-- [ ] Line numbering - a PR is currently open on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
+- [ ] Line numbering - a PR is currently merged on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
 
 
 

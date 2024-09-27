@@ -1,6 +1,6 @@
 # [v0.2.1](https://github.com/maucejo/elsearticle/releases/tags/v0.2.1)
 
-- Change default font to `Lato` for body and `Lete Sans Math` for equations
+- Fix bug [#5](https://github.com/maucejo/elsearticle/issues/5) - Thanks @jamesrswift
 
 # [v0.2.0](https://github.com/maucejo/elsearticle/releases/tags/v0.2.0)
 

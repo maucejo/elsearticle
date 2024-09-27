@@ -1,6 +1,6 @@
 [package]
 name = "elsearticle"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Mathieu Aucejo"]
 license = "MIT"
 description = "Conversion of the LaTeX elsearticle.cls"
@@ -12,5 +12,3 @@ repository = "https://github.com/maucejo/elsearticle"
 path = "template"
 entrypoint = "main.typ"
 thumbnail = "thumbnails/main.png"
-
-

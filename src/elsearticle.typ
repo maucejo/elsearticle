@@ -164,9 +164,6 @@
     }
   })
 
-  // Paragraph
-  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
-
   // Page
   set page(
         paper: "a4",
@@ -191,7 +188,7 @@
   let affiliations = ()
   let coord = none
   for author in authors {
-    let auth = (author.name, super(author.id))
+    let auth = (box(author.name), super(author.id))
     if author.corr != none {
       if author.id != none {
         auth.push(super((",", text(baseline: -1.5pt, "*")).join()))
@@ -234,6 +231,9 @@
   v(-2em)
   hide(footnote(coord, numbering: "*"))
   counter(footnote).update(0)
+
+  // Paragraph
+  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
 
   // Display the abstract
   if abstract != none {
