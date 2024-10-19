@@ -1,3 +1,7 @@
+# [v0.2.2](https://github.com/maucejo/elsearticle/releases/tags/v0.2.2)
+
+- Add the `line-numbering` option to the `#elsearticle()` command
+
 # [v0.2.1](https://github.com/maucejo/elsearticle/releases/tags/v0.2.1)
 
 - Fix bug [#5](https://github.com/maucejo/elsearticle/issues/5) - Thanks @jamesrswift
