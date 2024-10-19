@@ -169,7 +169,7 @@
         paper: "a4",
         numbering: "1",
         margin: els-margin,
-        columns: els-columns
+        columns: els-columns,
         // Set journal name and date
         footer: context{
           let i = counter(page).at(here()).first()
@@ -223,17 +223,7 @@
     linenum = "1"
   }
   set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
-  set par.line(numbering: linenum, numbering-scope: page)
-
-  // Display title and affiliation
-  align(center,{
-    par(leading: 0.75em, text(size: font-size.title, title))
-    v(0pt)
-    text(size: font-size.author, author-string)
-    v(font-size.small)
-    par(leading: 1em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
-    v(1.5em)
-  })
+  set par.line(numbering: linenum, numbering-scope: "page")
 
   // Format title and affiliation
   let els-authors = align(center,{
