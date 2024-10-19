@@ -101,8 +101,8 @@
   // Number of columns
   numcol: 1,
 
-  // Bibliography
-  bibliography-file: none,
+  // Line numbering
+  line-numbering: false,
 
   // The document's content.
   body,
@@ -217,6 +217,14 @@
   // Set document metadata.
   set document(title: title, author: names_meta)
 
+  // Paragraph
+  let linenum = none
+  if line-numbering {
+    linenum = "1"
+  }
+  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
+  set par.line(numbering: linenum, numbering-scope: page)
+
   // Display title and affiliation
   align(center,{
     par(leading: 0.75em, text(size: font-size.title, title))
@@ -231,9 +239,6 @@
   v(-2em)
   hide(footnote(coord, numbering: "*"))
   counter(footnote).update(0)
-
-  // Paragraph
-  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
 
   // Display the abstract
   if abstract != none {

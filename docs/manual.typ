@@ -29,7 +29,7 @@
 
 #show: mantys.with(
   name: "Elsearticle class for Typst",
-  version: "0.2.1",
+  version: "0.2.2",
   date: datetime.today(),
   license: "MIT",
   authors: ("Mathieu Aucejo"),
@@ -76,6 +76,7 @@ After importing #package[Elsearticle], you have to initialize the template by a 
   keywords: none,
   format: "preprint",
   numcol: 1,
+  line-numbering: false,
   [body])
 )[#argument("title", default: none, types: "string")[Title of the paper]
 
@@ -130,6 +131,8 @@ keywords: ("Keyword 1", "Keyword 2")
 
 To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by default and restricted to 1 or 2.]
 ]
+
+#argument("line-numbering", default: false, types: "bool")[Enable line numbering in the document]
 ]
 
 == Additional features
@@ -211,7 +214,4 @@ The #package[Elsearticle] template is still in development. Here are some of the
 
 *Other features*
 
-- [ ] Line numbering - a PR is currently merged on the Typst repo -- #link("https://github.com/typst/typst/pull/4516")[#text("See here", fill: eastern)]
-
-
-
+- [x] Line numbering - Use the built-in `par.line` function available from Typst v0.12

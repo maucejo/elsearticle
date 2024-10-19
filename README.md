@@ -1,6 +1,6 @@
 # Elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-0.2.1-cornflowerblue.svg)]()
+[![Generic badge](https://img.shields.io/badge/Version-0.2.2-cornflowerblue.svg)]()
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
@@ -13,7 +13,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:0.2.1": *
+#import "@preview/elsearticle:0.2.2": *
 ```
 
 ### Initializing the template
@@ -27,6 +27,9 @@ After importing `elsearticle`, you have to initialize the template by a show rul
 * `keywords`: List of keywords of the paper
 * `format`: Format of the paper. Possible values are `preprint`, `review`, `1p`, `3p`, `5p`
 * `numcol`: Number of columns of the paper. Possible values are 1 and 2
+* `line-numbering`: Enable line numbering. Possible values are `true` and `false`
+
+```typ
 
 ## Additional features
 
@@ -82,8 +85,6 @@ The `elsearticle` template provides the `#nonumeq()` function to create unnmbere
 *Figures and tables*
 
 - [x] Implementation of the `subfigure` environment
-- [x] Proper referencing of figure, subfigures and tables w.r.t. the context
-- [x] Recreation of the `link` to cross-reference figures, subfigures and tables
 
 *Equations*
 
@@ -92,7 +93,7 @@ The `elsearticle` template provides the `#nonumeq()` function to create unnmbere
 
 *Other features*
 
-- [ ] Line numbering - a PR is currently open on the Typst repo -- See [here](https://github.com/typst/typst/pull/4516")
+- [x] Line numbering - Line numbering - Use the built-in `par.line` function available from Typst v0.12
 
 ## License
 MIT licensed
