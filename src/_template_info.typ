@@ -1,4 +1,12 @@
 #import "_globals.typ": *
+#import "_utils.typ": *
+
+#let default-author = (
+  name: none,
+  affiliation: none,
+  corr: none,
+  id: "a"
+)
 
 #let template_info(title, abstract, authors, keywords, els-columns) = {
   // Set authors and affiliation
@@ -7,27 +15,28 @@
   let affiliations = ()
   let coord = none
   for author in authors {
-    let auth = (box(author.name), super(author.id))
-    if author.corr != none {
-      if author.id != none {
+    let new_author = create_dict(default-author, author)
+    let auth = (box(new_author.name), super(new_author.id))
+    if new_author.corr != none {
+      if new_author.id != none {
         auth.push(super((",", text(baseline: -1.5pt, "*")).join()))
       } else {
         auth.push(super(text(baseline: -1.5pt, "*")))
       }
       if els-columns == 1 {
-        coord = ("Corresponding author. E-mail address: ", author.corr).join()
+        coord = ("Corresponding author. E-mail address: ", new_author.corr).join()
       } else {
-        coord = ([Corresponding author. #linebreak() #h(1.4em)E-mail address: ], author.corr).join()
+        coord = ([Corresponding author. #linebreak() #h(1.4em) E-mail address: ], new_author.corr).join()
       }
     }
     names.push(box(auth.join()))
-    names_meta.push(author.name)
+    names_meta.push(new_author.name)
 
-    if author.affiliation == none {
+    if new_author.affiliation == none {
       continue
     }
     else {
-      affiliations.push((super(author.id), author.affiliation, v(font-size.script)).join())
+      affiliations.push((super(new_author.id), new_author.affiliation, v(font-size.script)).join())
     }
   }
 

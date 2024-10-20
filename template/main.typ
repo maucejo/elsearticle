@@ -15,32 +15,19 @@
     (
       name: "B. Author",
       affiliation: "University B, City B, Country B",
-      corr: none,
       id: "b"
     ),
     (
-      name: lorem(2),
-      affiliation: none,
-      corr: none,
-      id: "a",
+      name: lorem(2)
     ),
     (
-      name: lorem(3),
-      affiliation: none,
-      corr: none,
-      id: "a",
+      name: lorem(3)
     ),
     (
-      name: "A. Author",
-      affiliation: none,
-      corr: none,
-      id: "a",
+      name: "A. Author"
     ),
     (
-      name: "A. Author",
-      affiliation: none,
-      corr: none,
-      id: "a",
+      name: "A. Author"
     ),
   ),
   journal: "Name of the Journal",
