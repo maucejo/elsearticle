@@ -17,18 +17,10 @@
       affiliation: "University B, City B, Country B",
       id: "b"
     ),
-    (
-      name: lorem(2)
-    ),
-    (
-      name: lorem(3)
-    ),
-    (
-      name: "A. Author"
-    ),
-    (
-      name: "A. Author"
-    ),
+    (name: lorem(2)),
+    (name: lorem(3)),
+    (name: "A. Author"),
+    (name: "A. Author"),
   ),
   journal: "Name of the Journal",
   abstract: abstract,
