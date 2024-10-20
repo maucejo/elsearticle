@@ -1,6 +1,6 @@
 # Elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-0.2.2-cornflowerblue.svg)]()
+[![Generic badge](https://img.shields.io/badge/Version-0.3.0-cornflowerblue.svg)]()
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
@@ -13,7 +13,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:0.2.2": *
+#import "@preview/elsearticle:0.3.0": *
 ```
 
 ### Initializing the template
