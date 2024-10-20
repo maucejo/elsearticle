@@ -29,8 +29,6 @@ After importing `elsearticle`, you have to initialize the template by a show rul
 * `numcol`: Number of columns of the paper. Possible values are 1 and 2
 * `line-numbering`: Enable line numbering. Possible values are `true` and `false`
 
-```typ
-
 ## Additional features
 
 The `elsearticle` template provides additional features to help you format your document properly.
