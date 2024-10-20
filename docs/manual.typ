@@ -29,7 +29,7 @@
 
 #show: mantys.with(
   name: "Elsearticle class for Typst",
-  version: "0.2.2",
+  version: "0.3.0",
   date: datetime.today(),
   license: "MIT",
   authors: ("Mathieu Aucejo"),
