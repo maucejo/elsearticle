@@ -84,9 +84,9 @@ After importing #package[Elsearticle], you have to initialize the template by a 
 
 Each element of the #dtype("array") is a #dtype("dict") definining an author. The author #dtype("dictionary") has the following keys:
 - `name` #dtype("string"): Name of the author
-- `affiliation` #dtype("string"): Affiliation of the author
-- `corr` #dtypes("string", none): email address of the corresponding author
-- `id` #dtype("string"): ID of the author
+- `affiliation` #dtype("string") (optional): Affiliation of the author
+- `corr` #dtypes("string", none) (optional): email address of the corresponding author
+- `id` #dtype("string") (optional): ID of the author
 
 #codesnippet[```typc
 authors: (
@@ -99,9 +99,9 @@ authors: (
     (
       name: "J. Smith",
       affiliation: "Laboratory 2, University 2, City 2",
-      corr: none,
       id: "b"
     ),
+    (name: "J. Dupont"), // J. Dupont is in the same laboratory as J. Doe
   )
 ```]
 ]
