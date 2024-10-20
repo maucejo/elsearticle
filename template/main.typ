@@ -1,5 +1,5 @@
-#import "@preview/elsearticle:0.3.0": *
-// #import "../src/elsearticle.typ": *
+// #import "@preview/elsearticle:0.3.0": *
+#import "../src/elsearticle.typ": *
 
 #let abstract = lorem(100)
 
@@ -47,7 +47,7 @@
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
   format: "review",
-  line-numbering: true,
+  // line-numbering: true,
 )
 
 = Introduction

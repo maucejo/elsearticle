@@ -3,79 +3,10 @@
 // Github: https://github.com/maucejo
 // License: MIT
 // Date : 07/2024
-#import "@preview/subpar:0.1.1"
-
-#let font-size = (
-  script: 7pt,
-  footnote: 8pt,
-  small: 10pt,
-  normal: 11pt,
-  author: 12pt,
-  title: 17pt,
-)
-
-#let linespace = (
-  preprint: 1em,
-  review: 1.5em,
-)
-
-#let indent-size = 2em
-
-#let margins = (
-  review: (left: 105pt, right: 105pt, top: 130pt, bottom: 130pt),
-  preprint: (left: 105pt, right: 105pt, top: 130pt, bottom: 130pt),
-  one_p: (left: 105pt, right: 105pt, top: 140pt, bottom: 140pt),
-  three_p: (left: 64pt, right: 64pt, top: 110pt, bottom: 110pt),
-  five_p: (left: 37pt, right: 37pt, top: 80pt, bottom: 80pt)
-)
-
-#let isappendix = state("isappendix", false)
-
-// Equations
-#let nonumeq(body) = {
-  set math.equation(numbering: none)
-  body
-}
-
-// Subfigures
-#let subfigure = {
-  subpar.grid.with(
-    numbering: n => if isappendix.get() {numbering("A.1", counter(heading).get().first(), n)
-      } else {
-        numbering("1", n)
-      },
-    numbering-sub-ref: (m, n) => if isappendix.get() {numbering("A.1a", counter(heading).get().first(), m, n)
-      } else {
-        numbering("1a", m, n)
-      }
-  )
-}
-
-// Appendix
-#let appendix(body) = {
-  set heading(numbering: "A.1.")
-  // Reset heading counter
-  counter(heading).update(0)
-
-  // Equation numbering
-  let numbering-eq = n => {
-    let h1 = counter(heading).get().first()
-    numbering("(A.1)", h1, n)
-  }
-  set math.equation(numbering: numbering-eq)
-
-  // Figure and Table numbering
-  let numbering-fig = n => {
-    let h1 = counter(heading).get().first()
-    numbering("A.1", h1, n)
-  }
-  show figure.where(kind: image): set figure(numbering: numbering-fig)
-  show figure.where(kind: table): set figure(numbering: numbering-fig)
-
-  isappendix.update(true)
-
-  body
-}
+#import "_globals.typ": *
+#import "_environment.typ": *
+#import "_utils.typ": *
+#import "_template_info.typ": *
 
 #let elsearticle(
   // The article's title.
@@ -165,61 +96,24 @@
   })
 
   // Page
+  let footer = context{
+    let i = counter(page).at(here()).first()
+    if i == 1 {
+      set text(size: font-size.small)
+      emph(("Preprint submitted to ", journal).join())
+      h(1fr)
+      emph(datetime.today().display("[month repr:long] [day], [year]"))
+    } else {align(center)[#i]}
+  }
+
   set page(
-        paper: "a4",
-        numbering: "1",
-        margin: els-margin,
-        columns: els-columns,
-        // Set journal name and date
-        footer: context{
-          let i = counter(page).at(here()).first()
-          if i == 1 {
-            set text(size: font-size.small)
-            emph(("Preprint submitted to ", journal).join())
-            h(1fr)
-            emph(datetime.today().display("[month repr:long] [day], [year]"))
-          } else {align(center)[#i]}
-        },
-      )
-
-  // Set authors and affiliation
-  let names = ()
-  let names_meta = ()
-  let affiliations = ()
-  let coord = none
-  for author in authors {
-    let auth = (box(author.name), super(author.id))
-    if author.corr != none {
-      if author.id != none {
-        auth.push(super((",", text(baseline: -1.5pt, "*")).join()))
-      } else {
-        auth.push(super(text(baseline: -1.5pt, "*")))
-      }
-      if els-columns == 1 {
-        coord = ("Corresponding author. E-mail address: ", author.corr).join()
-      } else {
-        coord = ([Corresponding author. #linebreak() #h(1.4em)E-mail address: ], author.corr).join()
-      }
-    }
-    names.push(box(auth.join()))
-    names_meta.push(author.name)
-
-    if author.affiliation == none {
-      continue
-    }
-    else {
-      affiliations.push((super(author.id), author.affiliation, v(font-size.script)).join())
-    }
-  }
-
-  let author-string = if authors.len() == 2 {
-    names.join(" and ")
-  } else {
-    names.join(", ", last: " and ")
-  }
-
-  // Set document metadata.
-  set document(title: title, author: names_meta)
+    paper: "a4",
+    numbering: "1",
+    margin: els-margin,
+    columns: els-columns,
+    // Set journal name and date
+    footer: footer
+  )
 
   // Paragraph
   let linenum = none
@@ -229,50 +123,23 @@
   set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
   set par.line(numbering: linenum, numbering-scope: "page")
 
-  // Format title and affiliation
-  let els-authors = align(center,{
-    par(leading: 0.75em, text(size: font-size.title, title))
-    v(0pt)
-    text(size: font-size.author, author-string)
-    v(font-size.small)
-    par(leading: 1em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
-  })
+  // Define Template info
+  let els-info = template_info(title, abstract, authors, keywords, els-columns)
 
-
-  // Format the abstract
-  let els-abstract = if abstract != none {
-    line(length: 100%)
-    text(weight: "bold", [Abstract])
-    v(1pt)
-    h(-indent-size); abstract
-    linebreak()
-    if keywords !=none {
-      let kw = ()
-      for keyword in keywords{
-        kw.push(keyword)
-      }
-
-    let kw-string = if kw.len() > 1 {
-        kw.join(", ")
-      } else {
-        kw.first()
-      }
-      text((emph("Keywords: "), kw-string).join())
-    }
-    line(length: 100%)
-  }
+  // Set document metadata.
+  set document(title: title, author: els-info.els-meta)
 
   place(
     top,
     float: true,
     scope: "parent",
     [
-      #els-authors
-      #els-abstract
+      #els-info.els-authors
+      #els-info.els-abstract
     ]
   )
   // Corresponding author
-  hide(footnote(coord, numbering: "*"))
+  hide(footnote(els-info.coord, numbering: "*"))
   counter(footnote).update(0)
 
   // bibliography
