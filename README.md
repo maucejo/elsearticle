@@ -1,6 +1,6 @@
 # Elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-0.3.0-cornflowerblue.svg)]()
+[![Generic badge](https://img.shields.io/badge/Version-0.4.0-cornflowerblue.svg)]()
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
@@ -13,7 +13,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:0.3.0": *
+#import "@preview/elsearticle:0.4.0": *
 ```
 
 ### Initializing the template
@@ -87,7 +87,7 @@ The `elsearticle` template provides the `#nonumeq()` function to create unnmbere
 *Equations*
 
 - [x] Proper referencing of equations w.r.t. the context
-- [ ] Numbering each equation of a system as "(1a)" -- _On going discussions at the Typst dev level_
+- [x] Use of the `equate` package to number each equation of a system as "(1a)"
 
 *Other features*
 

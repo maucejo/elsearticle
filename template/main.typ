@@ -46,6 +46,13 @@ y = a x +b
 $ <eq1>
 where ...
 
+$
+  x = integral_0^x d x #<eqa>\
+  (u v)' = u' v + v' u #<eqb>
+$ <eq2>
+
+@eqa is a simple integral, while @eqb is the derivative of a product of two functions. These equations are grouped in @eq2.
+
 == Features
 
 === Table

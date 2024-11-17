@@ -2,7 +2,8 @@
 // Author: Mathieu Aucejo
 // Github: https://github.com/maucejo
 // License: MIT
-// Date : 07/2024
+// Date : 11/2024
+#import "@preview/equate:0.2.1": *
 #import "_globals.typ": *
 #import "_environment.typ": *
 #import "_utils.typ": *
@@ -83,7 +84,8 @@
   ]
 
   // Equations
-  set math.equation(numbering: n => numbering("(1)", n) , supplement: [Eq.])
+  show: equate.with(breakable: true, sub-numbering: true)
+  set math.equation(numbering: (..n) => numbering("(1a)", ..n) , supplement: [Eq.])
 
   // Figures, subfigures, tables
   show figure.where(kind: table): set figure.caption(position: top)
