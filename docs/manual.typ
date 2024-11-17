@@ -29,7 +29,7 @@
 
 #show: mantys.with(
   name: "Elsearticle class for Typst",
-  version: "0.3.0",
+  version: "0.4.0",
   date: datetime.today(),
   license: "MIT",
   authors: ("Mathieu Aucejo"),
@@ -210,7 +210,7 @@ The #package[Elsearticle] template is still in development. Here are some of the
 *Equations*
 
 - [x] Proper referencing of equations w.r.t. the context
-- [ ] Numbering each equation of a system as "(1a)" -- _On going discussions at the Typst dev level_
+- [x] Use of the `equate` package to number each equation of a system as "(1a)"
 
 *Other features*
 
