@@ -4,10 +4,10 @@
 // License: MIT
 // Date : 11/2024
 #import "@preview/equate:0.2.1": *
-#import "_globals.typ": *
-#import "_environment.typ": *
-#import "_utils.typ": *
-#import "_template_info.typ": *
+#import "els-globals.typ": *
+#import "els-environment.typ": *
+#import "els-utils.typ": *
+#import "els-template_info.typ": *
 
 #let elsearticle(
   // The article's title.

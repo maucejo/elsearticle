@@ -53,7 +53,7 @@ This manual provides an overview of the features of the #package[Elsearticle] te
 
 To use the #package[Elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:0.2.1": *
+#import "@preview/elsearticle:0.4.0": *
 ```
 ]
 
