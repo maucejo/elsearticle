@@ -8,14 +8,14 @@
   id: "a"
 )
 
-#let template_info(title, abstract, authors, keywords, els-columns) = {
+#let template-info(title, abstract, authors, keywords, els-columns) = {
   // Set authors and affiliation
   let names = ()
   let names_meta = ()
   let affiliations = ()
   let coord = none
   for author in authors {
-    let new_author = create_dict(default-author, author)
+    let new_author = create-dict(default-author, author)
     let auth = (box(new_author.name), super(new_author.id))
     if new_author.corr != none {
       if new_author.id != none {
