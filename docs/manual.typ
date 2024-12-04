@@ -29,7 +29,7 @@
 
 #show: mantys.with(
   name: "Elsearticle class for Typst",
-  version: "0.4.0",
+  version: "0.4.1",
   date: datetime.today(),
   license: "MIT",
   authors: ("Mathieu Aucejo"),
@@ -53,7 +53,7 @@ This manual provides an overview of the features of the #package[Elsearticle] te
 
 To use the #package[Elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:0.4.0": *
+#import "@preview/elsearticle:0.4.1": *
 ```
 ]
 
