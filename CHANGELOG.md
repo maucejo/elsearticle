@@ -1,3 +1,7 @@
+# [v0.4.1](https://github.com/maucejo/elsearticle/releases/tag/v0.4.1)
+
+- Fix bug [#7(https://github.com/maucejo/elsearticle/issues/7] - Thanks @joneuhauser
+
 # [v0.4.0](https://github.com/maucejo/elsearticle/releases/tag/v0.4.0)
 
 - Add equation sub-numbering based on the `equate` package
