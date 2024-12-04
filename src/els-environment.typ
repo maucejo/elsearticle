@@ -2,14 +2,14 @@
 
 // Appendix
 #let appendix(body) = {
-  set heading(numbering: "A.1.")
+  set heading(numbering: "A.1.", supplement: [Appendix])
   // Reset heading counter
   counter(heading).update(0)
 
   // Equation numbering
-  let numbering-eq = n => {
+  let numbering-eq = (..n) => {
     let h1 = counter(heading).get().first()
-    numbering("(A.1)", h1, n)
+    numbering("(A.1a)", h1, ..n)
   }
   set math.equation(numbering: numbering-eq)
 

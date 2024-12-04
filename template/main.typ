@@ -147,4 +147,9 @@ $ <eq>
     $
 ]
 
+$
+y = f(x) \
+y = g(x)
+$
+
 #bibliography("refs.bib")
