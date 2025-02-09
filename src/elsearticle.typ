@@ -102,7 +102,9 @@
     let i = counter(page).at(here()).first()
     if i == 1 {
       set text(size: font-size.small)
-      emph(("Preprint submitted to ", journal).join())
+      if journal != none {
+        emph(("Preprint submitted to ", journal).join())
+      }
       h(1fr)
       emph(datetime.today().display("[month repr:long] [day], [year]"))
     } else {align(center)[#i]}
