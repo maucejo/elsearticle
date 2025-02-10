@@ -18,15 +18,16 @@
     let new-author = create-dict(default-author, author)
     let auth = (box(new-author.name), super(new-author.id))
     if new-author.corr != none {
-      if new-author.id != none {
-        auth.push(super((",", text(baseline: -1.5pt, "*")).join()))
-      } else {
-        auth.push(super(text(baseline: -1.5pt, "*")))
-      }
       if els-columns == 1 {
         coord = ("Corresponding author. E-mail address: ", new-author.corr).join()
       } else {
         coord = ([Corresponding author. #linebreak() #h(1.4em) E-mail address: ], new-author.corr).join()
+      }
+
+      if new-author.id != none {
+        auth.push(super((",", text(baseline: -1.5pt, "*")).join()))
+      } else {
+        auth.push(super(text(baseline: -1.5pt, "*")))
       }
     }
     names.push(box(auth.join()))
