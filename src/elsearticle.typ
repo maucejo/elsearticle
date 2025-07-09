@@ -43,7 +43,7 @@
   set text(size: font-size.normal, font: "New Computer Modern")
 
   // Conditional formatting
-  let els-linespace = if format == "review" {linespace.review} else {linespace.preprint}
+  let els-linespace = if format.contains("review") {linespace.review} else {linespace.preprint}
 
   let els-margin = if format.contains("review") {margins.review}
   else if format.contains("preprint") {margins.preprint}
@@ -163,7 +163,7 @@
   counter(footnote).update(0)
   els-info.els-authors
   els-info.els-abstract
-  v(els-linespace)
+  if format.contains("review") {v(els-linespace)} else {v(2*els-linespace)}
 
   // bibliography
   set bibliography(title: "References")
