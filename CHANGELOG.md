@@ -1,3 +1,7 @@
+# [v0.4.3](https://github.com/maucejo/elsearticle/releases/tag/v0.4.3)
+
+- Fix bug [#10](https://github.com/maucejo/elsearticle/pull/10) - Thanks @dkantereivin
+
 # [v0.4.2](https://github.com/maucejo/elsearticle/releases/tag/v0.4.2)
 
 - Fix bug [#9](https://github.com/maucejo/elsearticle/pull/9) - Thanks @benni012

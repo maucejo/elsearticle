@@ -54,12 +54,13 @@
     text(size: font-size.author, author-string)
     v(font-size.small)
     par(leading: 1em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
+    v(2*font-size.small)
   })
 
   // Format the abstract
   let els-abstract = if abstract != none {
-    line(length: 100%)
-    text(weight: "bold", [Abstract])
+    line(length: 100%, stroke: 0.5pt)
+    text(weight: "bold", [#h(-indent-size); Abstract])
     v(1pt)
     h(-indent-size); abstract
     linebreak()
@@ -76,7 +77,7 @@
       }
       text((emph("Keywords: "), kw-string).join())
     }
-    line(length: 100%)
+    line(length: 100%, stroke: 0.5pt)
   }
 
   let els-info = (

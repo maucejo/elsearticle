@@ -62,7 +62,6 @@
   show heading: it => block(above: els-linespace, below: els-linespace)[
     #if it.numbering != none {
       if it.level == 1 {
-        set par(leading: 0.75em, hanging-indent: 1.25em)
         set text(font-size.normal)
         numbering(it.numbering, ..counter(heading).at(it.location()))
         text((" ", it.body).join())
@@ -124,8 +123,34 @@
   if line-numbering {
     linenum = "1"
   }
-  set par(justify: true, first-line-indent: indent-size, leading: els-linespace)
+
+  set par(justify: true, first-line-indent: (amount: indent-size, all:true), leading: els-linespace)
   set par.line(numbering: linenum, numbering-scope: "page")
+
+  // Workaround to not indent the first paragraph after an equation
+  show math.equation: it => it + [#[ #[]<eq-end>]]
+  show par: it => {
+    if it.first-line-indent.amount == 0pt {
+      // Prevent recursion.
+      return it
+    }
+
+    context {
+      let eq-end = query(selector(<eq-end>).before(here())).at(-1, default: none)
+      if eq-end == none { return it }
+      if eq-end.location().position() != here().position() { return it }
+
+      // Paragraph start aligns with end of last equation, so recreate
+      // the paragraph, but without indent.
+      let fields = it.fields()
+      let body = fields.remove("body")
+      return par(
+        ..fields,
+        first-line-indent: 0pt,
+        body
+      )
+    }
+  }
 
   // Define Template info
   let els-info = template-info(title, abstract, authors, keywords, els-columns)
@@ -133,18 +158,12 @@
   // Set document metadata.
   set document(title: title, author: els-info.els-meta)
 
-  place(
-    top,
-    float: true,
-    scope: "parent",
-    [
-      #els-info.els-authors
-      #els-info.els-abstract
-    ]
-  )
   // Corresponding author
   hide(footnote(els-info.coord, numbering: "*"))
   counter(footnote).update(0)
+  els-info.els-authors
+  els-info.els-abstract
+  v(els-linespace)
 
   // bibliography
   set bibliography(title: "References")
