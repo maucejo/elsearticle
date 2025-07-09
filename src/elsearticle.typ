@@ -45,15 +45,15 @@
   // Conditional formatting
   let els-linespace = if format == "review" {linespace.review} else {linespace.preprint}
 
-  let els-margin = if format == "review" {margins.review}
-  else if format == "preprint" {margins.preprint}
-  else if format == "1p" {margins.one_p}
-  else if format == "3p" {margins.three_p}
-  else if format == "5p" {margins.five_p}
+  let els-margin = if format.contains("review") {margins.review}
+  else if format.contains("preprint") {margins.preprint}
+  else if format.contains("1p") {margins.one_p}
+  else if format.contains("3p") {margins.three_p}
+  else if format.contains("5p") {margins.five_p}
   else {margins.review}
 
-  let els-columns = if format == "1p" {1}
-  else if format == "5p" {2}
+  let els-columns = if format.contains("1p") {1}
+  else if format.contains("5p") {2}
   else {if numcol > 2 {2} else {if numcol <= 0  {1} else {numcol}}}
 
   // Heading
