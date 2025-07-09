@@ -48,9 +48,9 @@
   }
 
   // Format title and affiliation
-  let els-authors = align(center,{
+  let els-authors = align(center, {
     par(leading: 0.75em, text(size: font-size.title, title))
-    v(0pt)
+    v(1em)
     text(size: font-size.author, author-string)
     v(font-size.small)
     par(leading: 1em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
@@ -61,7 +61,7 @@
   let els-abstract = if abstract != none {
     line(length: 100%, stroke: 0.5pt)
     text(weight: "bold", [#h(-indent-size); Abstract])
-    v(1pt)
+    v(0.5em)
     h(-indent-size); abstract
     linebreak()
     if keywords !=none {
