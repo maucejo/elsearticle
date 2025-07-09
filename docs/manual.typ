@@ -6,7 +6,7 @@
 
 
 #let abstract = [
-  #package[elsearticle] is a Typst template that aims to mimic the Elsevier article #LaTeX class, a.k.a. elsearticle.cls, provided by Elsevier to format manuscript properly for submission to their journals.
+  #package[elsearticle] is a Typst template that aims to mimic the Elsevier article #LaTeX class, a.k.a. elsarticle.cls, provided by Elsevier to format manuscript properly for submission to their journals.
 ]
 
 #show: mantys(
