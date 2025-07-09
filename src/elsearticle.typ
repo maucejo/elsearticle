@@ -3,7 +3,7 @@
 // Github: https://github.com/maucejo
 // License: MIT
 // Date : 11/2024
-#import "@preview/equate:0.2.1": *
+#import "@preview/equate:0.3.2": *
 #import "els-globals.typ": *
 #import "els-environment.typ": *
 #import "els-utils.typ": *
