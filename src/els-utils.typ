@@ -20,15 +20,3 @@
   set math.equation(numbering: none)
   body
 }
-
-// Create a dictionary for authors
-#let create-dict(default-dict, user-dict) = {
-  let new-dict = default-dict
-    for (key, value) in user-dict {
-      if key in default-dict.keys() {
-        new-dict.insert(key, value)
-      }
-    }
-
-  return new-dict
-}

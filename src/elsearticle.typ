@@ -40,17 +40,15 @@
   body,
 ) = {
   // Text
-  set text(size: font-size.normal, font: "New Computer Modern")
+  set text(size: font-size.normal, font: textfont)
 
   // Conditional formatting
-  let els-linespace = if format.contains("review") {linespace.review} else {linespace.preprint}
-
-  let els-margin = if format.contains("review") {margins.review}
-  else if format.contains("preprint") {margins.preprint}
-  else if format.contains("1p") {margins.one_p}
-  else if format.contains("3p") {margins.three_p}
-  else if format.contains("5p") {margins.five_p}
-  else {margins.review}
+  let els-format = if format.contains("review") {review}
+  else if format.contains("preprint") {preprint}
+  else if format.contains("1p") {one-p}
+  else if format.contains("3p") {three-p}
+  else if format.contains("5p") {five-p}
+  else {review}
 
   let els-columns = if format.contains("1p") {1}
   else if format.contains("5p") {2}
@@ -59,7 +57,7 @@
   // Heading
   set heading(numbering: "1.")
 
-  show heading: it => block(above: els-linespace, below: els-linespace)[
+  show heading: it => block(above: els-format.above, below: els-format.below)[
     #if it.numbering != none {
       if it.level == 1 {
         set text(font-size.normal)
@@ -84,17 +82,13 @@
 
   // Equations
   show: equate.with(breakable: true, sub-numbering: true)
-  set math.equation(numbering: (..n) => numbering("(1a)", ..n) , supplement: [Eq.])
+  show math.equation: set text(font: mathfont)
+  set math.equation(numbering: (..n) => text(font: textfont, numbering("(1a)", ..n)) , supplement: none)
 
   // Figures, subfigures, tables
   show figure.where(kind: table): set figure.caption(position: top)
-  set ref(supplement: it => {
-    if it.func() == figure and it.kind == image {
-      "Fig."
-    } else {
-      it.supplement
-    }
-  })
+  set ref(supplement: none)
+  show ref: set text(fill: rgb(0, 0, 255))
 
   // Page
   let footer = context{
@@ -109,22 +103,39 @@
     } else {align(center)[#i]}
   }
 
-  set page(
-    paper: "a4",
-    numbering: "1",
-    margin: els-margin,
-    columns: els-columns,
-    // Set journal name and date
-    footer: footer
+  set rect(
+  width: 100%,
+  height: 100%,
   )
 
-  // Paragraph
-  let linenum = none
-  if line-numbering {
-    linenum = "1"
-  }
+  set page(
+    paper: els-format.paper,
+    numbering: "1",
+    margin: els-format.margins,
+    footer: footer,
+    footer-descent: els-format.footer-descent
+  )
 
-  set par(justify: true, first-line-indent: (amount: indent-size, all:true), leading: els-linespace)
+  // Links
+  show link: set text(fill: rgb(0, 0, 255))
+
+  // Define Template info
+  let els-info = template-info(title, abstract, authors, keywords, els-columns, els-format)
+
+  // Set document metadata.
+  set document(title: title, author: els-info.els-meta)
+
+  // Corresponding author
+  hide(footnote(els-info.coord, numbering: "*"))
+  counter(footnote).update(0)
+  set par(justify: true, leading: els-format.leading)
+  els-info.els-authors
+  els-info.els-abstract
+
+  // Paragraph
+  let linenum = if line-numbering {"1"} else {none}
+
+  set par(first-line-indent: (amount: els-format.indent, all:true), spacing: els-format.spacing)
   set par.line(numbering: linenum, numbering-scope: "page")
 
   // Workaround to not indent the first paragraph after an equation
@@ -152,24 +163,10 @@
     }
   }
 
-  // Define Template info
-  let els-info = template-info(title, abstract, authors, keywords, els-columns)
-
-  // Set document metadata.
-  set document(title: title, author: els-info.els-meta)
-
-  // Corresponding author
-  hide(footnote(els-info.coord, numbering: "*"))
-  counter(footnote).update(0)
-  els-info.els-authors
-  els-info.els-abstract
-  if format.contains("review") {v(els-linespace)} else {v(2*els-linespace)}
-
   // bibliography
-  set bibliography(title: "References")
+  set bibliography(title: "References", style: "elsevier-with-titles")
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
-  v(-2em)
-  body
+  show: columns(els-columns, body)
 }

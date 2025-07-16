@@ -1,0 +1,333 @@
+\begin{thebibliography}{10}
+
+\bibitem{Orm74}
+R.~A. Ormiston.
+\newblock Comparison of several methods for predicting loads on a hypothetical helicopter rotor.
+\newblock In {\em Proceedings of the Meeting of Specialists on Rotorcraft Dynamics, American Helicopter Society and Ames Research Center}, Moffett Field, CA, United States, 1974.
+
+\bibitem{Fla77}
+W.~G. Flannelly, F.~D. Bartlett, and T.W. Forsberg.
+\newblock Laboratory verification of force determination, a potential tool for reliability testing.
+\newblock Technical report, Kaman Aerospace Corporation, 1977.
+
+\bibitem{Had02}
+J.~Hadamard.
+\newblock Sur les problèmes aux dérivées partielles et leur signification physique.
+\newblock {\em Princeton University Bulletin}, 13 (4):49--52, 1902.
+
+\bibitem{Fri13}
+C.-P. Fritzen, M.~Klinkov, and P.~Kraemer.
+\newblock {\em New trends in structural health monitoring}, chapter Vibration-based damage diagnosis and monitoring of external loads, pages 149--208.
+\newblock Springer, 2013.
+
+\bibitem{Jan99}
+M.~H.~A. Janssens and J.~W. Verheij.
+\newblock The use of an equivalent forces method for the experimental quantification of structural sound transmission in ships.
+\newblock {\em Journal of Sound and Vibration}, 226 (2):305--328, 1999.
+
+\bibitem{Cor08}
+M.~Corus, O.~Sauvage, and E.~Balmès.
+\newblock Estimation of transmitted loads using experimental substructuring.
+\newblock In {\em Proceedings of International Conference on Noise and Vibration Engineering (ISMA)}, 2004.
+
+\bibitem{Jan19}
+K.~Janssens, B.~Forrier, R.~Cumbo E.~Risalti andB. Cornelis, T.~Tamarozzi, and W.~Desmet.
+\newblock Virtual sensing application cases exploiting various degrees of model complexity.
+\newblock In {\em Proceedings of Asia-Pacific Vibration Conference 2019}, 2019.
+
+\bibitem{Rog22}
+T.~J. Rogers and T.~Friis.
+\newblock A latent restoring force approach to nonlinear system identification.
+\newblock {\em Mechanical Systems and Signal Processing}, 180:109426, 2022.
+
+\bibitem{Lei20}
+Y.~Lei, J.~Lu, J.~Huang, and S.~Chen.
+\newblock A general synthesis of identification and vibration control of building structures under unknown excitations.
+\newblock {\em Mechanical Systems and Signal Processing}, 143:106803, 2020.
+
+\bibitem{Pot84}
+R.~Potter and W.~Seering.
+\newblock Multichannel structural inverse filtering.
+\newblock {\em Journal of Vibtation, Acoustics, Stress, and Reliability in Design}, 106 (1):22--28, 1984.
+
+\bibitem{Sun20}
+Y.~Sun, L.~Luo, K.~Chen, X.~Qin, and Q.~Zhang.
+\newblock A time-domain for load identification using moving weighted least square technique.
+\newblock {\em Computers and Structures}, 234:106254, 2020.
+
+\bibitem{Li10}
+L.~Li and B.~Jafarpour.
+\newblock Effective solution of nonlinear subsurface flow inverse problems in sparse bases.
+\newblock {\em Inverse Problems}, 26:105016, 2010.
+
+\bibitem{Auc16}
+M.~Aucejo and O.~De Smet.
+\newblock Bayesian source identification using local priors.
+\newblock {\em Mechanical Systems and Signal Processing}, 66--67:120--136, 2016.
+
+\bibitem{Thi03}
+A.~N. Thite and D.~J. Thompson.
+\newblock The quantification of structure-borne transmission paths by inverse methods. part 2: Use of regularization techniques.
+\newblock {\em Journal of Sound and Vibration}, 264:433--451, 2003.
+
+\bibitem{Ren13}
+C.~Renzi, C.~Pézerat, and J.-L. Guyader.
+\newblock Vibratory source identification by using the finitte element method model of a subdomain of a flexural beam.
+\newblock {\em Journal of Sound and Vibration}, 332:545--562, 2013.
+
+\bibitem{Qia17}
+B.~Qiao, X.~Zhang, J.~Gao, R.~Liu, and X.~Chen.
+\newblock Sparse deconvolution for the large-scale ill-posed inverse problem of impact force reconstruction.
+\newblock {\em Mechanical Systems and Signal Processing}, 83:93--115, 2017.
+
+\bibitem{Auc17}
+M.~Aucejo and O.~De Smet.
+\newblock A multiplicative regularization for force reconstruction.
+\newblock {\em Mechanical Systems and Signal Processing}, 85:730--745, 2017.
+
+\bibitem{Rez16}
+A.~Rezayat, V.~Nassiri, B.~De Pauw, J.~Ertveldt, S.~Vanlanduit, and P.~Guillaume.
+\newblock Identification of dynamic forces using group-sparsity in frequency domain.
+\newblock {\em Mechanical Systems and Signal Processing}, 70--71:756--768, 2016.
+
+\bibitem{Auc19}
+M.~Aucejo, O.~De Smet, and J.-F. Deü.
+\newblock On a space-time regularization for force reconstruction.
+\newblock {\em Mechanical Systems and Signal Processing}, 118:549--567, 2018.
+
+\bibitem{Li18}
+Q.~Li and Q.~Lu.
+\newblock A hierarchical bayesian method for vibration-based time domain force reconstruction problems.
+\newblock {\em Journal of Sound and Vibration}, 421:190--204, 2018.
+
+\bibitem{Auc19b}
+M.~Aucejo and O.~De Smet.
+\newblock An optimal bayesian regularization for force reconstruction problems.
+\newblock {\em Mechanical Systems and Signal Processing}, 126:98--115, 2019.
+
+\bibitem{Zha12}
+E.~Zhang, J.~Antoni, and P.~Feissel.
+\newblock Bayesian force reconstruction with an uncertain model.
+\newblock {\em Journal of Sound and Vibration}, 331:798--814, 2012.
+
+\bibitem{Fau17}
+C.~Faure, F.~Ablitzer, J.~Antoni, and C.~Pézerat.
+\newblock Empirical and fully bayesian approaches for the identification of vibration sources from transverse displacement measurements.
+\newblock {\em Mechanical Systems and Signal Processing}, 94:180--201, 2017.
+
+\bibitem{Auc18}
+M.~Aucejo and O.~De Smet.
+\newblock On a full bayesian inference for force reconstruction problems.
+\newblock {\em Mechanical Systems and Signal Processing}, 104:36--59, 2018.
+
+\bibitem{Ber14}
+A.~Berry, O.~Robin, and F.~Pierron.
+\newblock Identification of dynamic loading on a bending plate using the virtual fields method.
+\newblock {\em Journal of Sound and Vibration}, 333:7151--7164, 2014.
+
+\bibitem{Tot18}
+N.~Totaro.
+\newblock Selective structural source indentification.
+\newblock {\em Journal of Sound and Vibration}, 420:114--128, 2018.
+
+\bibitem{Xu15}
+X.~Xu and J.~Ou.
+\newblock Force identification of dynamic systems using virtual work principle.
+\newblock {\em Journal of Sound and Vibration}, 337:71--94, 2015.
+
+\bibitem{Pez95}
+C.~Pézerat and J.-L. Guyader.
+\newblock Two inverse methods for localization of external sources exciting a beam.
+\newblock {\em Acta Acustica}, 3:1--10, 1995.
+
+\bibitem{Lec12}
+Q.~Leclère and C.~Pézerat.
+\newblock Vibration source identification using corrected finite difference schemes.
+\newblock {\em Journal of Sound and Vibration}, 331, 1366--1377.
+
+\bibitem{Odo17}
+{P. O'Donoghue}, O.~Robin, and A.~Berry.
+\newblock Time-resolved identification of mechanical loadings on plates using the virutal fields method and deflectometry measurements.
+\newblock {\em Strain}, 54 (3):e12258, 2017.
+
+\bibitem{Auj19}
+Nicolas Aujogue and Annie Ross.
+\newblock Transient force analysis technique to identify time-varying loads and defects on plates.
+\newblock In {\em Proceedings of the 16th International Congress on Sound and Vibration (ICSV16)}, Montreal, Canada, 2019.
+
+\bibitem{Pez20}
+C.~Pézerat, Q.~Leclère, E.~Le Roux, and J.-H. Thomas.
+\newblock Adapting the correction for cfat application in time domain.
+\newblock In {\em Proceedings of Forum Acusticum 2020}, Lyon, France, 2020.
+
+\bibitem{Tab19}
+I.~Tabian, H.~Fu, and Z.~Sharif Khodaei.
+\newblock A convolutional neural network for impact detection and characterization of complex composite structures.
+\newblock {\em Sensors}, 19:4933, 2019.
+
+\bibitem{Yan23}
+H.~Yang, J.~Jiang, G.~Chen, and J.~Zhao.
+\newblock Dynamic load identification based on deep convolution neural network.
+\newblock {\em Mechanical Systems and Signal Processing}, 185:109757, 2023.
+
+\bibitem{Zho24}
+R.~Zhou, B.~Qiao, J.~Liu, W.~Cheng, and X.~Chen.
+\newblock Impact force localization and reconstruction via gated temporal convolutional network.
+\newblock {\em Aerospace Science and Technology}, 144:108819, 2024.
+
+\bibitem{Zho19}
+JM~Zhou, L.~Dong, W.~Guan, and J.~Yan.
+\newblock Impact load identification of nonlinear structures using deep recurrent neural network.
+\newblock {\em Mechanical Systems and Signal Processing}, 133:106292, 2019.
+
+\bibitem{Yan21}
+H.~Yang, J.~Jiang, G.~Chen, M.~S. Mohamed, and F.~Lu.
+\newblock A recurrent neural network-based method for dynamic load identification of beam structures.
+\newblock {\em Materials}, 14:7846, 2021.
+
+\bibitem{Esh22}
+S.~Sadeghi Eshkevari, L.~Cronin, S.~Sadeghi Eshkevari, and S.~N. Pakzad.
+\newblock Input estimation of nonlinear systems using probabilistic neural network.
+\newblock {\em Mechanical Systems and Signal Processing}, 166:108368, 2022.
+
+\bibitem{Imp24}
+M.~Impraimakis.
+\newblock Deep recurrent-convolutional neural network learning and physics kalman filtering comparison in dynamic load identification.
+\newblock {\em Structural Health Monitoring}, 24 (3):1752--1782, 2024.
+
+\bibitem{Li24}
+Y.~Li, P.~Ni, L.~Sun, and Y.~Xia.
+\newblock Finite element model-informed deep learning for equivalent force estimation and full-field response calculation.
+\newblock {\em Mechanical Systems and Signal Processing}, 206:110892, 2024.
+
+\bibitem{Zho24b}
+J.~Zhou, Y.~Cai, L.~Dong, B.~Zhang, and Z.~Peng.
+\newblock Data-physics hybrid-driven deep learning method for impact force identification.
+\newblock {\em Mechanical Systems and Signal Processing}, 211:111238, 2024.
+
+\bibitem{Zho25}
+R.~Zhou, B.~Qiao, L.~Jiang, W.~Cheng, X.~Yiang, Y.~Wang, and X.~Chen.
+\newblock A model-based deep learning approach to interpretable impact force localization and reconstruction.
+\newblock {\em Mechanical Systems and Signal Processing}, 224:111977, 2025.
+
+\bibitem{Hua23}
+C.~Huang, C.~Tao, H.~Ji, and J.~Qiu.
+\newblock Impact force reconstruction and localization using distance-assisted graph neural network.
+\newblock {\em Mechanical Systems and Signal Processing}, 200:110606, 2023.
+
+\bibitem{Lee22}
+C.~Y. Lee, H.~Hasegawa, and S.~Gao.
+\newblock Complex-valued neural networks: A comprehensive survey.
+\newblock {\em IEEE/CAA Journal of Automatica Sinica}, 9 (8):1406--1426, 2022.
+
+\bibitem{Wan21}
+C.~Wang, D.~Chen, J.~Chen, and T.~He X.~Lai.
+\newblock Deep regression adaptation networks with model-based transfer learning for dynamic load identification in the frequency domain.
+\newblock {\em Engineering Applications of Artifial Intelligence}, 102:104244, 2021.
+
+\bibitem{Bus97}
+H.~R. Busby and D.~M. Trujillo.
+\newblock Optimal regularization of an inverse dynamic problem.
+\newblock {\em Computers and Structures}, 63 (2):243--248, 1997.
+
+\bibitem{Nor06}
+L.~J.~L. Nordström.
+\newblock A dynamic programming algorithm for input estimation on linear time-variant systems.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering}, 195:6407--6427, 2006.
+
+\bibitem{Stu12}
+M.~Sturm, A.~T. Moorehouse, T.~Alber, and F.~F. Li.
+\newblock Force reconstruction using an adaptive algorithm in time domain.
+\newblock In {\em Proceedings of International Conference on Noise and Vibration Engineering (ISMA)}, Leuven, Belgium, 2012.
+
+\bibitem{Lou12}
+E.~Lourens, E.~Reynders, G.~De Roeck, and G.~Lombaert.
+\newblock An augmented kalman filter for force identification in structural dynamics.
+\newblock {\em Mechanical Systems and Signal Processing}, 27:446--460, 2012.
+
+\bibitem{Nay19}
+R.~Nayek, S.~Chakraborty, and S.~Narasimhan.
+\newblock A gaussian process latent force model for joint input-state estimation in linear structural systems.
+\newblock {\em Mechanical Systems and Signal Processing}, 128:497--530, 2019.
+
+\bibitem{Zou23}
+J.~Zou, E.~Lourens, and A.~Cicirello.
+\newblock Virtual sensing of subsoil strain response in monopile-based offshore wind turbines via gaussian process latent force models.
+\newblock {\em Mechanical Systems and Signal Processing}, 200:110488, 2023.
+
+\bibitem{Lou12b}
+E.~Lourens, C.~Papadimitriou, S.~Gillijns, E.~Reynders, G.~De Roeck, and G.~Lombaert.
+\newblock Joint input-response estimation for structural systems based on reduced-order models and vibration data from a limited number of sensors.
+\newblock {\em Mechanical Systems and Signal Processing}, 29:310--327, 2012.
+
+\bibitem{Eft15}
+S.~Eftekhar Azam, E.~Chatzi, and C.~Papadimitriou.
+\newblock A dual kalman filter approach for state estimation via ouput-only acceleration measurements.
+\newblock {\em Mechanical Systems and Signal Processing}, 60--61:866--886, 2015.
+
+\bibitem{Sed19}
+O.~Sedehi, C.~Papadimitriou, D.~Teymouri, and L.~S. Katafygiotis.
+\newblock Sequential bayesian estimation of state and input in dynamical systems using ouput-only measurements.
+\newblock {\em Mechanical Systems and Signal Processing}, 131:659--688, 2019.
+
+\bibitem{Ghi22}
+J.~Ghibaudo, M.~Aucejo, and O.~De Smet.
+\newblock A sparse adaptive bayesian filter for input estimation problems.
+\newblock {\em Mechanical Systems and Signal Processing}, 180:109416, 2022.
+
+\bibitem{Auc14}
+M.~Aucejo.
+\newblock Strcutral source identification using a generalized tikhonov regularization.
+\newblock {\em Journal of Sound and Vibration}, 333:5693--5707, 2014.
+
+\bibitem{Auc25}
+M.~Aucejo and O.~De Smet.
+\newblock A frequency-domain sequential bayesian filter for sparse and broadband force estimation problems.
+\newblock {\em Mechanical Systems and Signal Processing}, 232:112729, 2025.
+
+\bibitem{Das99}
+P.~K. Dash, A.~K. Pradhan, and G.~Panda.
+\newblock Frequency estimationtion of distorted power system signals using extended complex kalman filter.
+\newblock {\em IEEE Transactions on Power Delivery}, 14 (3):761--766, 1999.
+
+\bibitem{Per24}
+R.~Pérez-Ibacache, R.~Carvajal, R.~Herrera-Hernàndez, and J.~C. Agüero.
+\newblock A complex-valued stationary kalman filter for positive and negative sequance estimation in der systems.
+\newblock {\em Mathematics}, 12:1899, 2024.
+
+\bibitem{Enz06}
+G.~Enzner and P.~Vary.
+\newblock Frequency-domain adaptive kalman filter for acoustic echo control in hands-free telephones.
+\newblock {\em Signal Processing}, 86:1140--1156, 2006.
+
+\bibitem{Kab22}
+T.~Kabzinski and P.~Jax.
+\newblock A unified perspective on time-domain and frequency-domain kalman filters for acoustic system identification.
+\newblock In {\em Proceedings of the 30th European Signal Processing Conference (EUSIPCO)}, Belgrade, Serbia, 2022.
+
+\bibitem{Fan19}
+W.~Fan, K.~Chen, J.~Lu, and J.~Tao.
+\newblock Effective improvement of under-modeling frequency-domain kalman filter.
+\newblock {\em IEEE Signal Processing Letters}, 26 (2):342--346, 2019.
+
+\bibitem{Wan19}
+G.~Wang, S.~S. Ge, R.~Xue, J.~Zhao, and C.~Li.
+\newblock Complex-valued kalman filters based on gaussian entropy.
+\newblock {\em Signal Processing}, 160, 178--189.
+
+\bibitem{Meh70}
+R.~Mehra.
+\newblock On the identification of variances and adaptive kalman filtering.
+\newblock {\em IEEE Transactions on Automatic Control}, 15 (2):175--184, 1970.
+
+\bibitem{Dun17}
+J.~Duník, O.~Straka, O.~KOst, and J.~Havlík.
+\newblock Noise covariance matrices in state-space models: A survey and comparison of estimation methods -- part i.
+\newblock {\em International Journal of Adaptive Control and Signal Processing}, 31 (11):1505--1543, 2017.
+
+\bibitem{Zha20}
+L.~Zhang, D.~Sidoti, A.~Bienkowski, K.~R. Pattipati, Y.~Bar-Shalom, and D.~L. Kleinman.
+\newblock On the identification of noise covariances and adative kalman filtering: A new look at a 50 year-old problem.
+\newblock {\em IEEE Access}, 8:59362--59388, 2020.
+
+\end{thebibliography}

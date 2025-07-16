@@ -10,7 +10,8 @@
 .github
 scripts
 tests
-Justfile
-# PDF manuals should be included so that they can be linked, but not their sources
-docs/*
-!docs/*.pdf
+justfile
+docs/manual.pdf
+src/latex/*
+src/main.pdf
+

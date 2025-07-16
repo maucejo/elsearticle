@@ -1,5 +1,4 @@
-// #import "@preview/elsearticle:0.4.3": *
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:1.0.0": *
 
 #let abstract = lorem(100)
 
@@ -39,10 +38,10 @@
 
 == Subsection 1
 
-#lorem(10) (see @eq1) @Aut10.
+#lorem(10) (see Eq. @eq1) @Aut10.
 
 $
-y = a x +b
+y = alpha x + beta tau integral_0^x d x
 $ <eq1>
 where ...
 
@@ -51,13 +50,13 @@ $
   (u v)' = u' v + v' u #<eqb>
 $ <eq2>
 
-@eqa is a simple integral, while @eqb is the derivative of a product of two functions. These equations are grouped in @eq2.
+Eq. @eqa is a simple integral, while Eq. @eqb is the derivative of a product of two functions. These equations are grouped in Eq. @eq2.
 
 == Features
 
 === Table
 
-Below is @tab:tab1.
+Below is Table @tab:tab1.
 
 #let tab1 = {
   table(
@@ -80,7 +79,7 @@ Below is @tab:tab1.
 
 === Figures
 
-Below is @fig:logo.
+Below is Fig. @fig:logo.
 
 #figure(
   image("images/typst-logo.svg", width: 50%),
@@ -89,7 +88,7 @@ Below is @fig:logo.
 
 === Subfigures
 
-Below are @figa and @figb, which are part of @fig:typst.
+Below are Figs. @figa and @figb, which are part of Fig. @fig:typst.
 
 #subfigure(
 figure(image("images/typst-logo.svg"), caption: []), <figa>,

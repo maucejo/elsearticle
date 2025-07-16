@@ -8,14 +8,14 @@
   id: "a"
 )
 
-#let template-info(title, abstract, authors, keywords, els-columns) = {
+#let template-info(title, abstract, authors, keywords, els-columns, els-format) = {
   // Set authors and affiliation
   let names = ()
   let names-meta = ()
   let affiliations = ()
   let coord = none
   for author in authors {
-    let new-author = create-dict(default-author, author)
+    let new-author = default-author + author
     let auth = (box(new-author.name), super(new-author.id))
     if new-author.corr != none {
       if els-columns == 1 {
@@ -49,22 +49,24 @@
 
   // Format title and affiliation
   let els-authors = align(center, {
-    par(leading: 0.75em, text(size: font-size.title, title))
-    v(1em)
+    par(leading: 0.95em, text(size: font-size.title, title))
+    v(0.9em)
     text(size: font-size.author, author-string)
-    v(font-size.small)
-    par(leading: 1em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
-    v(2*font-size.small)
+    v(0.2em)
+    par(leading: 0.65em, text(size: font-size.small, emph(affiliations.join()), top-edge: 0.5em))
+    v(1.75em)
   })
 
   // Format the abstract
   let els-abstract = if abstract != none {
+    set par(justify: true)
     line(length: 100%, stroke: 0.5pt)
-    text(weight: "bold", [#h(-indent-size); Abstract])
-    v(0.5em)
-    h(-indent-size); abstract
-    linebreak()
-    if keywords !=none {
+    v(-0.25em)
+    text(weight: "bold")[Abstract]
+    if els-format.type.contains("review") {v(0.5em)} else {v(-0.2em)}
+    abstract
+    if els-format.type.contains("review") {linebreak()} else {v(0em)}
+    if keywords != none {
       let kw = ()
       for keyword in keywords{
         kw.push(keyword)
@@ -77,7 +79,11 @@
       }
       text((emph("Keywords: "), kw-string).join())
     }
+    v(-0.2em)
     line(length: 100%, stroke: 0.5pt)
+    if els-format.type.contains("review") {v(-0.75em)}
+    else if els-format.type.contains("5p") {v(-0.25em)}
+    else {none}
   }
 
   let els-info = (

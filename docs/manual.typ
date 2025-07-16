@@ -11,14 +11,14 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "0.4.3",
+  version: "1.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
   description: "Typst template for Elsevier article submissions",
   repository: "https://github.com/maucejo/elsearticle",
 
-  title: "Elsearticle class for Typst",
+  title: "elsearticle class for Typst",
   date: datetime.today(),
 
   abstract: abstract,
@@ -27,12 +27,16 @@
 
 = About
 
-#package[Elsearticle] is a Typst template that aims to mimic the Elsevier article #LaTeX class, a.k.a. elsearticle.cls, provided by Elsevier to format manuscript properly for submission to their journals.
+#package[Elsearticle] is a Typst template that aims to mimic the Elsevier article #LaTeX class, a.k.a. elsarticle.cls, provided by Elsevier to format manuscript properly for submission to their journals.
 
 #package[elsearticle] is designed to be as close as possible to the original class, whose specification can be found in the #link("http://assets.ctfassets.net/o78em1y1w4i4/3ro3yQff1q67JHmLi1sAqV/1348e3852f277867230fc4b84a801734/elsdoc-1.pdf")[#text("documentation", fill: eastern)].  The template is still in development and may not be fully compatible with all Elsevier journals.
 
 This manual provides an overview of the features of the #package[elsearticle] template and how to use it.
 
+To mimic the look and feel of the original elsarticle.cls, the following fonts must be used:
+- #link("https://www.ctan.org/pkg/xits", "XITS") and XITS Math for the best compatibility with the original elsarticle.cls;
+- #link("https://github.com/stipub/stixfonts", "STIX Two Text") and STIX Two Math as a reasonable alternative;
+- New Computer Modern and New Computer Modern Math are also defined to avoid compilation errors if the previous fonts are not available.
 
 #warning-alert()[The template is provided as is by the Typst community and is not affiliated with Elsevier.]
 
@@ -42,7 +46,7 @@ This manual provides an overview of the features of the #package[elsearticle] te
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:0.4.3": *
+#import "@preview/elsearticle:1.0.0": *
 ```
 ]
 
@@ -126,7 +130,7 @@ To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by
 
 == Additional features
 
-The #package[Elsearticle] template provides additional features to help you format your document properly.
+The #package[elsearticle] template provides additional features to help you format your document properly.
 
 === Appendix
 
@@ -176,7 +180,7 @@ The equations are numbered with the format "(1)", "(2)" in normal sections and w
 
 = Roadmap
 
-The #package[elsearticle] template is still in development. Here are some of the features that are planned for future releases :
+The #package[elsearticle] template is still in development. Here are some of the features that are currently implemented or planned for future releases:
 
 *Article format*
 
@@ -194,7 +198,7 @@ The #package[elsearticle] template is still in development. Here are some of the
 
 - [x] Implementation of the `subfigure` environment
 - [x] Proper referencing of figure, subfigures and tables w.r.t. the context
-- [x] Recreation of the `link` to cross-reference figures, subfigures and tables
+//- [x] Recreation of the `link` to cross-reference figures, subfigures and tables
 
 *Equations*
 
