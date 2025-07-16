@@ -22,6 +22,7 @@ files=(
   LICENSE
   README.md
   docs/manual.typ
+  thumbnails/
 )
 
 # Local package directories per platform
