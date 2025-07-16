@@ -4,7 +4,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
-`elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsearticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
+`elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsarticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
 
 ## Basic usage
 
