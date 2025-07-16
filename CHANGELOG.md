@@ -1,7 +1,7 @@
 # [v1.0.0](https://github.com/maucejo/elsearticle/releases/tag/v1.0.0)
 
 - Refactoring of the format handling
-- Use of the font use by the original `elsarticle` template
+- Inclusion of the font used by the original `elsarticle` template
 
 # [v0.4.3](https://github.com/maucejo/elsearticle/releases/tag/v0.4.3)
 
