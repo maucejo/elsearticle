@@ -66,7 +66,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
   authors: (),
   abstract: none,
   journal: none,
-  keywords: none,
+  keywords: (),
   format: "preprint",
   numcol: 1,
   line-numbering: false,
@@ -103,7 +103,7 @@ authors: (
 
 #argument("journal", default: none, types: "string")[Name of the journal]
 
-#argument("keywords", default: none, types: "array")[List of the keywords of the paper
+#argument("keywords", default: (), types: "array")[List of the keywords of the paper
 
 Each element of the #dtype("array") is a #dtype("string") representing a keyword
 

@@ -25,7 +25,7 @@
   journal: none,
 
   // Keywords
-  keywords: none,
+  keywords: (),
 
   // For integrating future formats (1p, 3p, 5p, final)
   format: "review",
@@ -123,7 +123,11 @@
   let els-info = template-info(title, abstract, authors, keywords, els-columns, els-format)
 
   // Set document metadata.
-  set document(title: title, author: els-info.els-meta)
+  set document(
+    title: title,
+    author: els-info.els-meta,
+    keywords: keywords,
+  )
 
   // Corresponding author
   hide(footnote(els-info.coord, numbering: "*"))

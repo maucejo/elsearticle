@@ -66,7 +66,7 @@
     if els-format.type.contains("review") {v(0.5em)} else {v(-0.2em)}
     abstract
     if els-format.type.contains("review") {linebreak()} else {v(0em)}
-    if keywords != none {
+    if keywords != () {
       let kw = ()
       for keyword in keywords{
         kw.push(keyword)
