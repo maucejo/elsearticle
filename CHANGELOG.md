@@ -1,3 +1,7 @@
+# [v1.1.0](https://github.com/maucejo/elsearticle/releases/tag/v1.1.0)
+
+- Embed keywords in document metadata - Thanks @alametti
+
 # [v1.0.0](https://github.com/maucejo/elsearticle/releases/tag/v1.0.0)
 
 - Refactoring of the format handling
