@@ -46,7 +46,7 @@ To mimic the look and feel of the original elsarticle.cls, the following fonts m
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:1.0.0": *
+#import "@preview/elsearticle:1.1.0": *
 ```
 ]
 
