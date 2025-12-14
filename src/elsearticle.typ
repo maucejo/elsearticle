@@ -53,6 +53,7 @@
   let els-columns = if format.contains("1p") {1}
   else if format.contains("5p") {2}
   else {if numcol > 2 {2} else {if numcol <= 0  {1} else {numcol}}}
+  set page(columns: els-columns)
 
   // Heading
   set heading(numbering: "1.")
@@ -133,8 +134,11 @@
   hide(footnote(els-info.coord, numbering: "*"))
   counter(footnote).update(0)
   set par(justify: true, leading: els-format.leading)
-  els-info.els-authors
-  els-info.els-abstract
+  place(top, scope: "parent", float: true, clearance: 0pt, {
+    v(els-format.above)
+    els-info.els-authors
+    els-info.els-abstract
+  })
 
   // Paragraph
   let linenum = if line-numbering {"1"} else {none}
@@ -172,5 +176,5 @@
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
-  show: columns(els-columns, body)
+  show: body
 }
