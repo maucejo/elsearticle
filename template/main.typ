@@ -25,7 +25,7 @@
   journal: "Name of the Journal",
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
-  format: "review",
+  format: "5p",
   // line-numbering: true,
 )
 
