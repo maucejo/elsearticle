@@ -1,5 +1,4 @@
-// #import "@preview/elsearticle:1.1.0": *
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:1.1.1": *
 
 #let abstract = lorem(100)
 
@@ -27,7 +26,7 @@
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
   format: "3p",
-  numcol: 2
+  numcol: 2,
   // line-numbering: true,
 )
 
