@@ -117,7 +117,7 @@ keywords: ("Keyword 1", "Keyword 2")
 
 #argument("numcol", default: 1, types: "number")[Number of columns of the paper. Possible values are 1 and 2
 
-#info-alert()[According to the documentation of `elsearticle.cls` (see #link("https://assets.ctfassets.net/o78em1y1w4i4/3ro3yQff1q67JHmLi1sAqV/1348e3852f277867230fc4b84a801734/elsdoc-1.pdf", "here")), the number of columns is related to the format of the paper:
+#info-alert[According to the documentation of `elsearticle.cls` (see #link("https://assets.ctfassets.net/o78em1y1w4i4/3ro3yQff1q67JHmLi1sAqV/1348e3852f277867230fc4b84a801734/elsdoc-1.pdf", "here")), the number of columns is related to the format of the paper:
 - 1p: Single column only
 - 3p: Single or double column possible
 - 5p: Double column only
@@ -125,7 +125,7 @@ keywords: ("Keyword 1", "Keyword 2")
 To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by default and restricted to 1 or 2.
 ]
 
-#warning-alert()[To make the implementation generic, the last line of the template is like:
+#warning-alert[To make the implementation generic, the last line of the template is like:
   #codesnippet[
     ```typc
     show: column(numcol, body)
