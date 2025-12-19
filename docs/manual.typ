@@ -125,15 +125,15 @@ keywords: ("Keyword 1", "Keyword 2")
 To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by default and restricted to 1 or 2.
 ]
 
-#warning-alert[To make the implementation generic, the last line of the template is like:
-  #codesnippet[
-    ```typc
-    show: column(numcol, body)
-    ```
-  ]
+// #warning-alert[To make the implementation generic, the last line of the template is like:
+//   #codesnippet[
+//     ```typc
+//     show: column(numcol, body)
+//     ```
+//   ]
 
-This means that a page break must be inserted using the #cmd[colbreak] command and not #cmd[pagebreak].
-]
+// This means that a page break must be inserted using the #cmd[colbreak] command and not #cmd[pagebreak].
+// ]
 ]
 
 #argument("line-numbering", default: false, types: "bool")[Enable line numbering in the document]
