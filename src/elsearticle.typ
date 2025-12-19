@@ -113,7 +113,7 @@
     numbering: "1",
     margin: els-format.margins,
     footer: footer,
-    footer-descent: els-format.footer-descent
+    footer-descent: els-format.footer-descent,
   )
 
   // Links
