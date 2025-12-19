@@ -60,18 +60,7 @@
   show heading: it => block(above: els-format.above, below: els-format.below)[
     #if it.numbering != none {
       if it.level == 1 {
-        if counter(heading).display() == "1." {
-          if els-format.type.contains("review") {v(-1.07*els-format.above)}
-          else if els-format.type.contains("5p") {v(-1.38*els-format.above)}
-          else {
-            if numcol == 2 {
-              v(-1.34*els-format.above)
-            } else {
-              v(-1.21*els-format.above)
-            }
-          }
-        }
-        set par(justify: true, first-line-indent: -1em)
+        set par(justify: true, first-line-indent: 0em)
         set text(font-size.normal)
         numbering(it.numbering, ..counter(heading).at(it.location()))
         text((" ", it.body).join())
@@ -143,20 +132,30 @@
   )
 
   // Corresponding author
-  hide(footnote(els-info.coord, numbering: "*"))
-  counter(footnote).update(0)
+  place(bottom, scope: "column", float: false, {
+    hide(footnote(els-info.coord, numbering: "*"))
+    counter(footnote).update(0)
+  })
+
   set par(justify: true, leading: els-format.leading)
 
   let els-clearance = 1.5em
-  if numcol == 2 and els-format.type.contains("3p") {
+  if els-format.type.contains("3p") and els-columns == 2 {
     els-clearance = 1.75em
   }
   place(top, scope: "parent", float: true, clearance: els-clearance, {
-    if els-format.type.contains("review") {v(1.15*els-format.above)}
-    else if els-format.type.contains("5p") {v(-1.5*els-format.above)}
-    else {v(1.33*els-format.above)}
+    let els-title-above = if els-format.type.contains("review") {1.15*els-format.above}
+    else if els-format.type.contains("5p") { 1.49*els-format.above}
+    else {1.33*els-format.above}
+
+    let els-title-below = if els-format.type.contains("review") {0.51em}
+    else if els-format.type.contains("5p") or (els-format.type.contains("3p") and els-columns == 2 ) {0em}
+    else {0.25em}
+
+    v(els-title-above)
     els-info.els-authors
     els-info.els-abstract
+    v(els-title-below)
   })
 
   // Paragraph

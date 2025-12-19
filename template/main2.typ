@@ -27,7 +27,7 @@
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
   format: "3p",
-  numcol: 2
+  numcol: 2,
   // line-numbering: true,
 )
 
