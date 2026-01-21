@@ -1,8 +1,7 @@
-// #import "@preview/elsearticle:1.1.1": *
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:2.0.0": *
+// #import "../src/elsearticle.typ": *
 
 #let abstract = lorem(100)
-
 
 #show: elsearticle.with(
   title: "Title of the paper",
