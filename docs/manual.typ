@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "1.1.1",
+  version: "2.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -46,7 +46,7 @@ To mimic the look and feel of the original elsarticle.cls, the following fonts m
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:1.1.1": *
+#import "@preview/elsearticle:2.0.0": *
 ```
 ]
 
@@ -64,6 +64,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
 #command("elsearticle", ..args(
   title: none,
   authors: (),
+  institutions: (),
   abstract: none,
   journal: none,
   keywords: (),
@@ -73,30 +74,46 @@ After importing #package[elsearticle], you have to initialize the template by a 
   [body])
 )[#argument("title", default: none, types: "string")[Title of the paper]
 
-#argument("authors", default: (), types: "array")[List of the authors of the paper
+#argument("authors", default: (), types: array)[
+  Array containing the list of authors of the article. Each author is defined as a dictionary with the following keys:
+  - `name`: Name of the author (required) #dtypes(str, content)
+  - `institutions`: List of institutions of the author (required) #dtype(array)
+  - `corresponding`: Corresponding author (optional, default: false) #dtype(bool)
+  - `email`: Email of the corresponding author (optional) #dtypes(str, content)
 
-Each element of the #dtype("array") is a #dtype("dict") definining an author. The author #dtype("dictionary") has the following keys:
-- `name` #dtype("string"): Name of the author
-- `affiliation` #dtype("string") (optional): Affiliation of the author
-- `corr` #dtypes("string", none) (optional): email address of the corresponding author
-- `id` #dtype("string") (optional): ID of the author
+  #codesnippet[```typc
+  authors: (
+      (
+        name: "J. Doe",
+        institutions: ("a", "b"),
+        corresponding: true,
+        email: "jdoe@univ.edu",
+      ),
+      (
+        name: "J. Smith",
+        institutions: ("b",),
+      ),
+    )
+  ```]
+]
 
-#codesnippet[```typc
-authors: (
-    (
-      name: "J. Doe",
-      affiliation: "Laboratory 1, University 1, City 1",
-      corr: "jdoe@univ.edu",
-      id: "a",
-    ),
-    (
-      name: "J. Smith",
-      affiliation: "Laboratory 2, University 2, City 2",
-      id: "b"
-    ),
-    (name: "J. Dupont"), // J. Dupont is in the same laboratory as J. Doe
-  )
-```]
+#argument("institutions", default: (), types: dictionary)[
+  Dictionary containing the list of institutions of the article. Each institution is defined as a key-value pair, where the key is a #dtype(str) representing the institution ID and the value is a #dtypes(str, content) giving the name and the address of the institution.
+
+  #codesnippet[
+    ```typc
+    institutions: (
+      "a": [Institution A, City A, Country A],
+      "b": [Instritution B, City B, Country B],
+    )
+    ```
+  ]
+
+  #info-alert[If the paper has only one author, `institutions`must be:
+    - `("",)` in the `authors` #dtype(array) of #dtype(dictionary)
+    - `("": [Institution name])` in the `institutions` #dtype(dictionary)
+    to conform with the Elsevier template requirements.
+  ]
 ]
 
 #argument("abstract", default: none, types: "content")[Abstract of the paper]

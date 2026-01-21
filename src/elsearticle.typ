@@ -18,6 +18,8 @@
   // but the name is optional.
   authors: (),
 
+  institutions: (),
+
   // Your article's abstract. Can be omitted if you don't have one.
   abstract: none,
 
@@ -121,21 +123,12 @@
   // Links
   show link: set text(fill: rgb(0, 0, 255))
 
-  // Define Template info
-  let els-info = template-info(title, abstract, authors, keywords, els-columns, els-format)
-
   // Set document metadata.
   set document(
     title: title,
-    author: els-info.els-meta,
+    author: make-author-meta(authors),
     keywords: keywords,
   )
-
-  // Corresponding author
-  place(bottom, scope: "column", float: false, {
-    hide(footnote(els-info.coord, numbering: "*"))
-    counter(footnote).update(0)
-  })
 
   set par(justify: true, leading: els-format.leading)
 
@@ -143,7 +136,9 @@
   if els-format.type.contains("3p") and els-columns == 2 {
     els-clearance = 1.75em
   }
+
   place(top, scope: "parent", float: true, clearance: els-clearance, {
+
     let els-title-above = if els-format.type.contains("review") {1.15*els-format.above}
     else if els-format.type.contains("5p") { 1.49*els-format.above}
     else {1.33*els-format.above}
@@ -153,10 +148,12 @@
     else {0.25em}
 
     v(els-title-above)
-    els-info.els-authors
-    els-info.els-abstract
+    make-title(title: title, authors: authors, institutions: institutions)
+    make-abstract(abstract, keywords, els-format)
     v(els-title-below)
   })
+
+  make-corresponding-author(authors, els-columns)
 
   // Paragraph
   let linenum = if line-numbering {"1"} else {none}

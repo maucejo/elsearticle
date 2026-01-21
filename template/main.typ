@@ -1,4 +1,5 @@
-#import "@preview/elsearticle:1.1.1": *
+// #import "@preview/elsearticle:1.1.1": *
+#import "../src/elsearticle.typ": *
 
 #let abstract = lorem(100)
 
@@ -6,27 +7,18 @@
 #show: elsearticle.with(
   title: "Title of the paper",
   authors: (
-    (
-      name: "A. Author",
-      affiliation: "University A, City A, Country A",
-      corr: "a.author@univa.edu",
-      id: "a",
-    ),
-    (
-      name: "B. Author",
-      affiliation: "University B, City B, Country B",
-      id: "b"
-    ),
-    (name: lorem(2)),
-    (name: lorem(3)),
-    (name: "A. Author"),
-    (name: "A. Author"),
+    (name: [A. Author], institutions: ("a", "b"), corresponding: true, email:"author@univa.edu"),
+    (name: [B. Author], institutions: ("b",)),
+  ),
+  institutions: (
+    "a": [University A, City A, Country A],
+    "b": [University B, City B, Country B],
   ),
   journal: "Name of the Journal",
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
-  format: "3p",
-  numcol: 2,
+  format: "review",
+  numcol: 1,
   // line-numbering: true,
 )
 
