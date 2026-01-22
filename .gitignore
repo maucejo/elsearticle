@@ -1,8 +1,5 @@
 .DS_Store
 .github
-/new
-/old
-/old_just
 /test/latex
 justfile
 /scripts
