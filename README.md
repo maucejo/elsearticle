@@ -1,6 +1,6 @@
 # elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-2.0.0-cornflowerblue.svg)]()
+[![Generic badge](https://img.shields.io/badge/Version-2.1.0-cornflowerblue.svg)]()
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
@@ -21,7 +21,8 @@ To use the `elsearticle` template, you need to include the following line at the
 After importing `elsearticle`, you have to initialize the template by a show rule with the `#elsearticle()` command. This function takes an optional argument to specify the title of the document.
 
 * `title`: Title of the paper
-* `author`: List of the authors of the paper
+* `authors`: List of the authors of the paper
+* `affiliations`: List of the affiliations of the authors
 * `abstract`: Abstract of the paper
 * `journal`: Name of the journal
 * `keywords`: List of keywords of the paper

@@ -11,12 +11,10 @@
 #let make-author(author) = box({
   author.name
 
-  let auth-institution = if author.institutions.at(0) == "" {
+  let auth-affiliation = if author.affiliations.at(0) == "" {
     none
   } else {
-    author.institutions.map((key)=>{
-      key
-    })
+    author.affiliations.map((key) => {key})
   }
 
   let auth-rest = if (author.at("corresponding", default: false) == true){
@@ -24,13 +22,13 @@
     }
 
   sym.space.thin
-  if auth-institution == none {
+  if auth-affiliation == none {
     super({
       auth-rest.join([ ])
     })
   } else {
     super({
-      (auth-institution + auth-rest).join([,])
+      (auth-affiliation + auth-rest).join([,])
     })
   }
 })
@@ -74,7 +72,7 @@
   }
 }
 
-#let make-institution(key, value) = {
+#let make-affiliation(key, value) = {
   super[#key]
   if key != "" {
     sym.space.thin
@@ -82,47 +80,47 @@
   text(style:"italic", value)
 }
 
-#let make-institutions(institutions) = {
-  for (key, value) in institutions{
-    make-institution(key, value)
+#let make-affiliations(affiliations) = {
+  for (key, value) in affiliations{
+    make-affiliation(key, value)
     linebreak()
   }
 }
 
-#let make-title(title: none, authors: (), institutions: ()) = align(center, {
+#let make-title(title: none, authors: (), affiliations: ()) = align(center, {
   par(leading: 0.95em, text(size: font-size.title, title))
   v(0.9em)
   text(size: font-size.author, make-authors(authors))
   v(0.2em)
-  par(leading: 0.65em, text(size: font-size.small, make-institutions(institutions), top-edge: 0.5em))
+  par(leading: 0.65em, text(size: font-size.small, make-affiliations(affiliations), top-edge: 0.5em))
   v(1.75em)
 })
 
 // Format the abstract
 #let make-abstract(abstract, keywords, els-format) = if abstract != none {
-  set par(justify: true)
-  line(length: 100%, stroke: 0.5pt)
-  v(-0.25em)
-  text(weight: "bold")[Abstract]
-  if els-format.type.contains("review") {v(0.5em)} else {v(-0.2em)}
-  abstract
-  if els-format.type.contains("review") {linebreak()} else {v(0em)}
-  if keywords != () {
-    let kw = ()
-    for keyword in keywords{
-      kw.push(keyword)
-    }
+    set par(justify: true)
+    line(length: 100%, stroke: 0.5pt)
+    v(-0.25em)
+    text(weight: "bold")[Abstract]
+    if els-format.type.contains("review") {v(0.5em)} else {v(-0.2em)}
+    abstract
+    if els-format.type.contains("review") {linebreak()} else {v(0em)}
+    if keywords != () {
+      let kw = ()
+      for keyword in keywords{
+        kw.push(keyword)
+      }
 
-  let kw-string = if kw.len() > 1 {
-      kw.join(", ")
-    } else {
-      kw.first()
+    let kw-string = if kw.len() > 1 {
+        kw.join(", ")
+      } else {
+        kw.first()
+      }
+      text((emph("Keywords: "), kw-string).join())
     }
-    text((emph("Keywords: "), kw-string).join())
-  }
-  v(-0.2em)
-  line(length: 100%, stroke: 0.5pt)
-  if els-format.type.contains("review") {v(-0.75em)}
-  else if els-format.type.contains("5p") {v(-0.25em)}
-  else {none}
+    v(-0.2em)
+    line(length: 100%, stroke: 0.5pt)
+    if els-format.type.contains("review") {v(-0.75em)}
+    else if els-format.type.contains("5p") {v(-0.25em)}
+    else {none}
 }

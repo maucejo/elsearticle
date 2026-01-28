@@ -1,15 +1,15 @@
-#import "@preview/elsearticle:2.0.0": *
-// #import "../src/elsearticle.typ": *
+// #import "@preview/elsearticle:2.0.0": *
+#import "../src/elsearticle.typ": *
 
-#let abstract = lorem(100)
+#let abstract = lorem(200)
 
 #show: elsearticle.with(
   title: "Title of the paper",
   authors: (
-    (name: [A. Author], institutions: ("a", "b"), corresponding: true, email:"author@univa.edu"),
-    (name: [B. Author], institutions: ("b",)),
+    (name: [A. Author], affiliations: ("a", "b"), corresponding: true, email:"author@univa.edu"),
+    (name: [B. Author], affiliations: ("b",)),
   ),
-  institutions: (
+  affiliations: (
     "a": [University A, City A, Country A],
     "b": [University B, City B, Country B],
   ),
@@ -17,7 +17,7 @@
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
   format: "review",
-  numcol: 1,
+  numcol: 2,
   // line-numbering: true,
 )
 

@@ -18,7 +18,7 @@
   // but the name is optional.
   authors: (),
 
-  institutions: (),
+  affiliations: (),
 
   // Your article's abstract. Can be omitted if you don't have one.
   abstract: none,
@@ -117,7 +117,7 @@
     margin: els-format.margins,
     footer: footer,
     footer-descent: els-format.footer-descent,
-    columns: els-columns
+    // columns: els-columns
   )
 
   // Links
@@ -132,13 +132,7 @@
 
   set par(justify: true, leading: els-format.leading)
 
-  let els-clearance = 1.5em
-  if els-format.type.contains("3p") and els-columns == 2 {
-    els-clearance = 1.75em
-  }
-
-  place(top, scope: "parent", float: true, clearance: els-clearance, {
-
+  let front-matter = {
     let els-title-above = if els-format.type.contains("review") {1.15*els-format.above}
     else if els-format.type.contains("5p") { 1.49*els-format.above}
     else {1.33*els-format.above}
@@ -148,12 +142,13 @@
     else {0.25em}
 
     v(els-title-above)
-    make-title(title: title, authors: authors, institutions: institutions)
+    make-title(title: title, authors: authors, affiliations: affiliations)
     make-abstract(abstract, keywords, els-format)
     v(els-title-below)
-  })
+  }
 
   make-corresponding-author(authors, els-columns)
+  front-matter
 
   // Paragraph
   let linenum = if line-numbering {"1"} else {none}
@@ -191,5 +186,5 @@
   show bibliography: set heading(numbering: none)
   show bibliography: set text(size: font-size.normal)
 
-  show: body
+  show: columns(els-columns, body)
 }

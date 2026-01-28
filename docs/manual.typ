@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "2.0.0",
+  version: "2.1.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -77,7 +77,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
 #argument("authors", default: (), types: array)[
   Array containing the list of authors of the article. Each author is defined as a dictionary with the following keys:
   - `name`: Name of the author (required) #dtypes(str, content)
-  - `institutions`: List of institutions of the author (required) #dtype(array)
+  - `affiliations`: List of affiliations of the author (required) #dtype(array)
   - `corresponding`: Corresponding author (optional, default: false) #dtype(bool)
   - `email`: Email of the corresponding author (optional) #dtypes(str, content)
 
@@ -85,24 +85,24 @@ After importing #package[elsearticle], you have to initialize the template by a 
   authors: (
       (
         name: "J. Doe",
-        institutions: ("a", "b"),
+        affiliations: ("a", "b"),
         corresponding: true,
         email: "jdoe@univ.edu",
       ),
       (
         name: "J. Smith",
-        institutions: ("b",),
+        affiliations: ("b",),
       ),
     )
   ```]
 ]
 
-#argument("institutions", default: (), types: dictionary)[
-  Dictionary containing the list of institutions of the article. Each institution is defined as a key-value pair, where the key is a #dtype(str) representing the institution ID and the value is a #dtypes(str, content) giving the name and the address of the institution.
+#argument("affiliations", default: (), types: dictionary)[
+  Dictionary containing the list of affiliations of the article. Each affiliation is defined as a key-value pair, where the key is a #dtype(str) representing the affiliation ID and the value is a #dtypes(str, content) giving the name and the address of the affiliation.
 
   #codesnippet[
     ```typc
-    institutions: (
+    affiliations: (
       "a": [Institution A, City A, Country A],
       "b": [Instritution B, City B, Country B],
     )
@@ -206,33 +206,8 @@ The equations are numbered with the format "(1)", "(2)" in normal sections and w
   ```
 ]
 
-= Roadmap
+= Dependencies
 
-The #package[elsearticle] template is still in development. Here are some of the features that are currently implemented or planned for future releases:
-
-*Article format*
-
-- [x] Preprint
-- [x] Review
-- [x] 1p
-- [x] 3p
-- [x] 5p
-
-*Environment*
-
-- [x] Implementation of the `appendix` environment
-
-*Figures and tables*
-
-- [x] Implementation of the `subfigure` environment
-- [x] Proper referencing of figure, subfigures and tables w.r.t. the context
-//- [x] Recreation of the `link` to cross-reference figures, subfigures and tables
-
-*Equations*
-
-- [x] Proper referencing of equations w.r.t. the context
-- [x] Use of the `equate` package to number each equation of a system as "(1a)"
-
-*Other features*
-
-- [x] Line numbering - Use the built-in `par.line` function available from Typst v0.12
+The #package[elsearticle] template depends on the following packages:
+- `equate:0.3.2`: For equation handling and numbering.
+- `subpar:0.2.2`: For subfigure handling and numbering.
