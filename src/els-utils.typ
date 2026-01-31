@@ -20,3 +20,6 @@
   set math.equation(numbering: none)
   body
 }
+
+// pagebreak
+#let pagebreak(weak: false) = colbreak(weak: weak)

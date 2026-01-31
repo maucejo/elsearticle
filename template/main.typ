@@ -1,7 +1,7 @@
-// #import "@preview/elsearticle:2.0.0": *
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:2.0.1": *
+// #import "../src/elsearticle.typ": *
 
-#let abstract = lorem(200)
+#let abstract = lorem(250)
 
 #show: elsearticle.with(
   title: "Title of the paper",
@@ -17,7 +17,7 @@
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
   format: "review",
-  numcol: 2,
+  // numcol: 1,
   // line-numbering: true,
 )
 
