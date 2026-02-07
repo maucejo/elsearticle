@@ -1,5 +1,5 @@
-#import "@preview/elsearticle:2.0.1": *
-// #import "../src/elsearticle.typ": *
+// #import "@preview/elsearticle:2.0.1": *
+#import "../src/elsearticle.typ": *
 
 #let abstract = lorem(250)
 
@@ -97,7 +97,7 @@ label: <fig:typst>,
 
 == Figures
 
-In @fig:app
+In Fig. @fig:app
 
 #figure(
   image("images/typst-logo.svg", width: 50%),
@@ -106,7 +106,7 @@ In @fig:app
 
 == Subfigures
 
-Below are @figa-app and @figb-app, which are part of @fig:typst-app.
+Below are Figs. @figa-app and @figb-app, which are part of Fig. @fig:typst-app.
 
 #subfigure(
 figure(image("images/typst-logo.svg"), caption: []), <figa-app>,
@@ -118,7 +118,7 @@ label: <fig:typst-app>,
 
 == Tables
 
-In @tab:app
+In Table @tab:app
 
 #figure(
     tab1,
@@ -128,7 +128,7 @@ In @tab:app
 
 == Equations
 
-In @eq
+In Eq. @eq
 
 $
 y = f(x)
