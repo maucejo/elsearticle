@@ -196,6 +196,15 @@ The equations are numbered with the format "(1)", "(2)" in normal sections and w
   ```
 ]
 
+== Cross-referencing
+
+The supplement of cross-references is set to "none" by default to avoid unexpected behavior when referencing more than one item. However, you can revert this setting by using the following syntax after the template definition:
+#codesnippet[
+  ```typ
+  #set ref(supplement: auto)
+  ```
+]
+
 = Dependencies
 
 The #package[elsearticle] template depends on the following packages:
