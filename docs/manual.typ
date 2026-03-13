@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "2.0.1",
+  version: "2.0.2",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -46,7 +46,7 @@ To mimic the look and feel of the original elsarticle.cls, the following fonts m
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:2.0.1": *
+#import "@preview/elsearticle:2.0.2": *
 ```
 ]
 
@@ -109,9 +109,9 @@ After importing #package[elsearticle], you have to initialize the template by a 
     ```
   ]
 
-  #info-alert[If the paper has only one author, `institutions`must be:
-    - `("",)` in the `authors` #dtype(array) of #dtype(dictionary)
-    - `("": [Institution name])` in the `institutions` #dtype(dictionary)
+  #info-alert[If the paper has only one author, `institutions` must be:
+    - `(" ",)` in the `authors` #dtype(array) of #dtype(dictionary)
+    - `(" ": [Institution name])` in the `institutions` #dtype(dictionary)
     to conform with the Elsevier template requirements.
   ]
 ]

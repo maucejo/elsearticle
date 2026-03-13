@@ -11,25 +11,27 @@
 #let make-author(author) = box({
   author.name
 
-  let auth-affiliation = if author.affiliations.at(0) == "" {
+  let auth-affiliation = if author.at("affiliations", default: none) == none {
     none
   } else {
     author.affiliations.map((key) => {key})
   }
 
-  let auth-rest = if (author.at("corresponding", default: false) == true){
-      (sym.ast,)
+  let auth-rest
+  let iscorr
+  if author.at("corresponding", default: false) == true {
+      auth-rest = (sym.ast,)
+      iscorr = true
+    } else {
+      auth-rest = none
+      iscorr = false
     }
 
   sym.space.thin
   if auth-affiliation == none {
-    super({
-      auth-rest.join([ ])
-    })
+    if iscorr {super(sym.ast)}
   } else {
-    super({
-      (auth-affiliation + auth-rest).join([,])
-    })
+    super((auth-affiliation + auth-rest).join([,]))
   }
 })
 
@@ -40,6 +42,9 @@
 
 #let make-author-meta(authors) = {
   let names = ()
+
+  if authors.len() == 0 {return ()}
+
   for author in authors {
     if type(author.name) == content {
       names.push(author.name.text)
@@ -63,9 +68,9 @@
         set text(size: 10pt)
         set par(leading: 0.5em,)
         if els-columns == 1 {
-           [#h(1em);#super[#sym.ast]#h(0.1em);Corresponding author. E-mail address: #if (author.at("email", default: none)) != none {author.email} else {text("No email provided")}]
+           [#h(1em);#super[#sym.ast]#h(0.1em);Corresponding author. E-mail address: #if (author.at("email", default: none)) != none {author.email} else {"No email provided"}]
         } else {
-            [#h(1em);#super[#sym.ast]#h(0.1em);Corresponding author. #linebreak() #h(1.4em);E-mail address: #if (author.at("email", default: none)) != none {author.email} else {text("No email provided")}]
+            [#h(1em);#super[#sym.ast]#h(0.1em);Corresponding author. #linebreak() #h(1.4em);E-mail address: #if (author.at("email", default: none)) != none {author.email} else {"No email provided"}]
         }
       }
     )
@@ -74,7 +79,7 @@
 
 #let make-affiliation(key, value) = {
   super[#key]
-  if key != "" {
+  if key != " " {
     sym.space.thin
   }
   text(style:"italic", value)
