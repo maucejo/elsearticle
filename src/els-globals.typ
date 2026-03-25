@@ -12,9 +12,9 @@
 
 #let review = (
   indent: 1.5em,
-  paper: "us-letter",
+  paper: "a4",
   type: "review",
-  margins: (left: 39.7mm, right: 39.7mm, top: 39.7mm, bottom: 39.7mm),
+  margins: (left: 36.75mm, right: 36.75mm, top: 48.5mm, bottom: 48.5mm),
   leading: 1.1em,
   above: 1.6em,
   below: 1.3em,
@@ -24,9 +24,9 @@
 
 #let preprint = (
   indent: 1.5em,
-  paper: "us-letter",
+  paper: "a4",
   type: "preprint",
-  margins: (left: 39.7mm, right: 39.7mm, top: 43.7mm, bottom: 61.5mm),
+  margins: (left: 36.75mm, right: 36.75mm, top: 51.0mm, bottom: 71.8mm),
   leading: 0.5em,
   above: 1.4em,
   below: 0.85em,
