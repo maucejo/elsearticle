@@ -27,11 +27,9 @@
       iscorr = false
     }
 
-  sym.space.thin
-  if auth-affiliation == none {
-    if iscorr {super(sym.ast)}
-  } else {
-    super((auth-affiliation + auth-rest).join([,]))
+  if iscorr or auth-affiliation != none {
+    sym.space.thin
+    super(typographic: false, (auth-affiliation + auth-rest).join([,]))
   }
 })
 
