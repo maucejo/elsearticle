@@ -109,8 +109,11 @@ After importing #package[elsearticle], you have to initialize the template by a 
     ```
   ]
 
-  #info-alert[If the paper has only one author, `affiliations` must be:
-    - `(" ",)` in the `authors` #dtype(array) of #dtype(dictionary)
+  #info-alert[If the paper has only one author, `affiliations` should be:
+    - In the #dtype(array) of #dtype(dictionary):
+       - #dtype(none)
+       - an empty #dtype(dictionary) `()`
+       - not defined at all
     - `(" ": [Institution name])` in the `affiliations` #dtype(dictionary)
     to conform with the Elsevier template requirements.
   ]
