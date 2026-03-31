@@ -64,7 +64,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
 #command("elsearticle", ..args(
   title: none,
   authors: (),
-  institutions: (),
+  affiliations: (),
   abstract: none,
   journal: none,
   keywords: (),
@@ -109,9 +109,9 @@ After importing #package[elsearticle], you have to initialize the template by a 
     ```
   ]
 
-  #info-alert[If the paper has only one author, `institutions` must be:
+  #info-alert[If the paper has only one author, `affiliations` must be:
     - `(" ",)` in the `authors` #dtype(array) of #dtype(dictionary)
-    - `(" ": [Institution name])` in the `institutions` #dtype(dictionary)
+    - `(" ": [Institution name])` in the `affiliations` #dtype(dictionary)
     to conform with the Elsevier template requirements.
   ]
 ]
