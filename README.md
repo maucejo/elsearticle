@@ -1,6 +1,6 @@
 # elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-2.0.3-cornflowerblue.svg)]()
+[![Generic badge](https://img.shields.io/badge/Version-2.0.3-cornflowerblue.svg)](https://img.shields.io/badge/Version-2.0.3-cornflowerblue.svg)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/a30c15a79212b6bf9fe47483655474269831bee7/docs/manual.pdf)
 
