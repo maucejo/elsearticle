@@ -27,7 +27,7 @@ After importing `elsearticle`, you have to initialize the template by a show rul
 * `journal`: Name of the journal
 * `keywords`: List of keywords of the paper
 * `format`: Format of the paper. Possible values are `preprint`, `review`, `1p`, `3p`, `5p`
-* `paper`: Paper size. Possible values are "a5", "a4", "ansi-a", "ansi-b" and "us-letter"
+* `paper`: Paper size. Possible values are `"a4"`, `"ansi-a"`, `"us-letter"` and `"us-legal"`
 * `numcol`: Number of columns of the paper. Possible values are 1 and 2
 * `line-numbering`: Enable line numbering. Possible values are `true` and `false`
 
