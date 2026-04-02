@@ -8,6 +8,7 @@
 #import "els-environment.typ": *
 #import "els-utils.typ": *
 #import "els-template-info.typ": *
+#import "els-paper.typ": *
 
 #let elsearticle(
   // The article's title.
@@ -31,6 +32,9 @@
 
   // For integrating future formats (1p, 3p, 5p, final)
   format: "review",
+
+  // Paper size
+  paper: "a4",
 
   // Number of columns
   numcol: 1,
@@ -111,10 +115,14 @@
   height: 100%,
   )
 
+  let els-paper = if paper in paper-list {paper} else {"a4"}
+  let els-margins = adapt-margins(els-format.margins, els-paper)
+
   set page(
-    paper: els-format.paper,
+    paper: els-paper,
     numbering: "1",
-    margin: els-format.margins,
+    // margin: els-format.margins,
+    margin: els-margins,
     footer: footer,
     footer-descent: els-format.footer-descent,
     // columns: els-columns

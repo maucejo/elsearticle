@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "2.0.3",
+  version: "3.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -46,7 +46,7 @@ To mimic the look and feel of the original elsarticle.cls, the following fonts m
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:2.0.3": *
+#import "@preview/elsearticle:3.0.0": *
 ```
 ]
 
@@ -69,6 +69,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
   journal: none,
   keywords: (),
   format: "preprint",
+  paper: "a4",
   numcol: 1,
   line-numbering: false,
   [body])
@@ -133,6 +134,11 @@ keywords: ("Keyword 1", "Keyword 2")
 ]
 
 #argument("format", default: "review", types: "string")[Format of the paper. Possible values are "preprint", "review", "1p", "3p" and "5p"
+]
+
+#argument("paper", default: "a4", types: "string")[Paper size. Possible values are "a5", "a4", "ansi-a", "ansi-b" and "us-letter"
+
+#info-alert[If the value of `paper` is not in the list of possible values, it will be set to "a4" by default.]
 ]
 
 #argument("numcol", default: 1, types: "number")[Number of columns of the paper. Possible values are 1 and 2

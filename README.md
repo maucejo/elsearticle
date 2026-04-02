@@ -1,6 +1,6 @@
 # elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-2.0.3-cornflowerblue.svg)](https://img.shields.io/badge/Version-2.0.3-cornflowerblue.svg)
+[![Generic badge](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/a30c15a79212b6bf9fe47483655474269831bee7/docs/manual.pdf)
 
@@ -13,7 +13,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:2.0.3": *
+#import "@preview/elsearticle:3.0.0": *
 ```
 
 ### Initializing the template
@@ -27,6 +27,7 @@ After importing `elsearticle`, you have to initialize the template by a show rul
 * `journal`: Name of the journal
 * `keywords`: List of keywords of the paper
 * `format`: Format of the paper. Possible values are `preprint`, `review`, `1p`, `3p`, `5p`
+* `paper`: Paper size. Possible values are "a5", "a4", "ansi-a", "ansi-b" and "us-letter"
 * `numcol`: Number of columns of the paper. Possible values are 1 and 2
 * `line-numbering`: Enable line numbering. Possible values are `true` and `false`
 
@@ -70,4 +71,4 @@ The `elsearticle` template provides the `#nonumeq()` function to create unnmbere
 ## License
 MIT licensed
 
-Copyright (C) 2026 Mathieu AUCEJO (maucejo)
+Copyright (C) 2026 Mathieu AUCEJO and contributors (maucejo)

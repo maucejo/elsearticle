@@ -12,7 +12,7 @@
 
 #let review = (
   indent: 1.5em,
-  paper: "a4",
+  // paper: "a4",
   type: "review",
   margins: (left: 36.75mm, right: 36.75mm, top: 48.5mm, bottom: 48.5mm),
   leading: 1.1em,
@@ -24,7 +24,7 @@
 
 #let preprint = (
   indent: 1.5em,
-  paper: "a4",
+  // paper: "a4",
   type: "preprint",
   margins: (left: 36.75mm, right: 36.75mm, top: 51.0mm, bottom: 71.8mm),
   leading: 0.5em,
@@ -36,7 +36,7 @@
 
 #let one-p = (
   indent: 1.5em,
-  paper: "a4",
+  // paper: "a4",
   type: "1p",
   margins: (left: 37.5mm, right: 37.5mm, top: 45.2mm, bottom: 47.9mm),
   leading: 0.5em,
@@ -48,7 +48,7 @@
 
 #let three-p = (
   indent: 1.5em,
-  paper: "a4",
+  // paper: "a4",
   type: "3p",
   margins: (left: 22.8mm, right: 22.8mm, top: 38.8mm, bottom: 38.3mm),
   leading: 0.5em,
@@ -60,7 +60,7 @@
 
 #let five-p = (
   indent: 1.24em,
-  paper: "a4",
+  // paper: "a4",
   type: "5p",
   margins: (left: 12.9mm, right: 12.9mm, top: 80pt, bottom: 80pt),
   leading: 0.5em,
