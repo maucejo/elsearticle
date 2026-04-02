@@ -121,7 +121,6 @@
   set page(
     paper: els-paper,
     numbering: "1",
-    // margin: els-format.margins,
     margin: els-margins,
     footer: footer,
     footer-descent: els-format.footer-descent,
