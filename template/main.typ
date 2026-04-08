@@ -1,5 +1,5 @@
-#import "@preview/elsearticle:2.1.0": *
-// #import "../src/elsearticle.typ": *
+// #import "@preview/elsearticle:2.1.0": *
+#import "../src/elsearticle.typ": *
 
 #let abstract = lorem(250)
 
@@ -16,7 +16,7 @@
   journal: "Name of the Journal",
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
-  paper: "us-letter",
+  paper: "a5",
   format: "preprint",
   // numcol: 1,
   // line-numbering: true,

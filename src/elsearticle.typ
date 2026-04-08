@@ -44,7 +44,7 @@
 
   // The document's content.
   body,
-) = {
+) = context {
   // Text
   set text(size: font-size.normal, font: textfont)
 
@@ -117,6 +117,7 @@
 
   let els-paper = if paper in paper-list {paper} else {"a4"}
   let els-margins = adapt-margins(els-format.margins, els-paper)
+
 
   set page(
     paper: els-paper,
