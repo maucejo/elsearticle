@@ -152,8 +152,8 @@ To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by
 ]
 ]
 
+#pagebreak()
 #argument("line-numbering", default: false, types: "bool")[Enable line numbering in the document]
-]
 
 == Additional features
 
@@ -217,5 +217,6 @@ In `elsearticle`, the supplement of the `ref` function is set to "none" by defau
 = Dependencies
 
 The #package[elsearticle] template depends on the following packages:
+#v(0.5em)
 - `equate:0.3.2`: For equation handling and numbering.
 - `subpar:0.2.2`: For subfigure handling and numbering.
