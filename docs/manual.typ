@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "2.1.0",
+  version: "2.1.1",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -75,6 +75,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
   [body])
 )[#argument("title", default: none, types: "string")[Title of the paper]
 
+#colbreak()
 #argument("authors", default: (), types: array)[
   Array containing the list of authors of the article. Each author is defined as a dictionary with the following keys:
   - `name`: Name of the author (required) #dtypes(str, content)
