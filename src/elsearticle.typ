@@ -64,26 +64,27 @@
   set heading(numbering: "1.")
 
   show heading: it => block(above: els-format.above, below: els-format.below)[
-    #if it.numbering != none {
-      if it.level == 1 {
-        set par(justify: true, first-line-indent: 0em)
-        set text(font-size.normal)
-        numbering(it.numbering, ..counter(heading).at(it.location()))
-        text((" ", it.body).join())
+    #let num = if it.numbering != none {
+      text((numbering(it.numbering, ..counter(heading).at(it.location())), " ").join())
+    } else {
+      []
+    }
+    #if it.level == 1 {
+      set par(justify: true, first-line-indent: 0em)
+      set text(font-size.normal)
+      num
+      it.body
 
-        // Update math counter at each new appendix
-        if isappendix.get() {
-          counter(math.equation).update(0)
-          counter(figure.where(kind: image)).update(0)
-          counter(figure.where(kind: table)).update(0)
-        }
-      } else {
-        set text(font-size.normal, weight: "regular", style: "italic")
-        numbering(it.numbering, ..counter(heading).at(it.location()))
-        text((" ", it.body).join())
+      // Update math counter at each new appendix
+      if isappendix.get() {
+        counter(math.equation).update(0)
+        counter(figure.where(kind: image)).update(0)
+        counter(figure.where(kind: table)).update(0)
       }
     } else {
-      text(size: font-size.normal, it.body)
+      set text(font-size.normal, weight: "regular", style: "italic")
+      num
+      it.body
     }
   ]
 
