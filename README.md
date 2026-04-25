@@ -58,14 +58,18 @@ Subfigures are not built-in features of Typst, but the `elsearticle` template pr
   )
 ```
 
-### Equations
+### Unnumbered sections and equations
 
-The `elsearticle` template provides the `#nonumeq()` function to create unnmbered equations. The latter function can be used as follows:
+In some cases, you may want to create unnumbered sections or equations. The #package[elsearticle] template provides a way to do this using the `selector` function and dedicated #dtype(label). The latter can be used as follows:
+
 ```typ
-#nonumeq[$
-  y = f(x)
-  $
-]
+// Unnumbered section
+= Introduction <nonum-sec>
+
+// Unnumbered equation
+$
+y = f(x)
+$ <nonum-eq>
 ```
 
 ## License
