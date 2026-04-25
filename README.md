@@ -1,8 +1,8 @@
 # elsearticle template
 
-[![Generic badge](https://img.shields.io/badge/Version-2.1.0-cornflowerblue.svg)](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)
+[![Generic badge](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)](https://img.shields.io/badge/Version-3.0.0-cornflowerblue.svg)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
-[![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/a30c15a79212b6bf9fe47483655474269831bee7/docs/manual.pdf)
+[![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/elsearticle/blob/main/docs/manual.pdf)
 
 `elsearticle` is a Typst template that aims to mimic the Elsevier article LaTeX class, a.k.a. `elsarticle.cls`, provided by Elsevier to format manuscript properly for submission to their journals.
 
@@ -13,7 +13,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `elsearticle` template, you need to include the following line at the beginning of your `typ` file:
 
 ```typ
-#import "@preview/elsearticle:2.1.0": *
+#import "@preview/elsearticle:3.0.0": *
 ```
 
 ### Initializing the template
