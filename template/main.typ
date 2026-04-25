@@ -1,5 +1,5 @@
-// #import "@preview/elsearticle:2.1.0": *
-#import "../src/elsearticle.typ": *
+#import "@preview/elsearticle:3.0.0": *
+// #import "../src/elsearticle.typ": *
 
 #let abstract = lorem(250)
 
@@ -135,10 +135,9 @@ $
 y = f(x)
 $ <eq>
 
-#nonumeq[$
-    y = g(x)
-    $
-]
+$
+  y = g(x)
+$ <nonum-eq>
 
 $
 y = f(x) \

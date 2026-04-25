@@ -87,11 +87,13 @@
       it.body
     }
   ]
+  show selector(<nonum-sec>): set heading(numbering: none)
 
   // Equations
   show: equate.with(breakable: true, sub-numbering: true)
   show math.equation: set text(font: mathfont)
   set math.equation(numbering: (..n) => text(font: textfont, numbering("(1a)", ..n)) , supplement: none)
+  show selector(<nonum-eq>): set math.equation(numbering: none)
 
   // Figures, subfigures, tables
   show figure.where(kind: table): set figure.caption(position: top)

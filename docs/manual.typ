@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "2.1.1",
+  version: "3.0.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -193,16 +193,19 @@ To create a subfigure, you can use the following syntax:
 
 #info-alert()[The #cmd("subfigure") function is a wrapper around the #cmd[subpar.grid] function. The numbering is adapted to the context of the document (normal section or appendix).]
 
-=== Equations
+=== Unnumbered sections and equations
 
-The equations are numbered with the format "(1)", "(2)" in normal sections and with the format "(A.1)", "(A.2)" in appendices. In addition to these numbering patterns, the #package[elsearticle] template provides the #cmd("nonumeq") to create unnumbered equations. The latter function can be used as follows:
+In some cases, you may want to create unnumbered sections or equations. The #package[elsearticle] template provides a way to do this using the `selector` function and dedicated #dtype(label). The latter can be used as follows:
 
 #codesnippet[
   ```typ
-  #nonumeq[$
+  // Unnumbered section
+  = Introduction <nonum-sec>
+
+  // Unnumbered equation
+  $
     y = f(x)
-    $
-  ]
+  $ <nonum-eq>
   ```
 ]
 
