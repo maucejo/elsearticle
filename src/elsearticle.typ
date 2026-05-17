@@ -30,6 +30,9 @@
   // Keywords
   keywords: (),
 
+  // Date to display. Defaults to today's date if omitted.
+  date: datetime.today(),
+
   // For integrating future formats (1p, 3p, 5p, final)
   format: "review",
 
@@ -109,7 +112,7 @@
         emph(("Preprint submitted to ", journal).join())
       }
       h(1fr)
-      emph(datetime.today().display("[month repr:long] [day], [year]"))
+      emph(date.display("[month repr:long] [day], [year]"))
     } else {align(center)[#i]}
   }
 

@@ -68,6 +68,7 @@ After importing #package[elsearticle], you have to initialize the template by a 
   abstract: none,
   journal: none,
   keywords: (),
+  date: none,
   format: "preprint",
   paper: "a4",
   numcol: 1,
@@ -133,6 +134,8 @@ Each element of the #dtype("array") is a #dtype("string") representing a keyword
 keywords: ("Keyword 1", "Keyword 2")
 ```]
 ]
+
+#argument("date", default: none, types: "datetime")[Date to display. Defaults to today's date if omitted.]
 
 #argument("format", default: "review", types: "string")[Format of the paper. Possible values are "preprint", "review", "1p", "3p" and "5p"
 ]

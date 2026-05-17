@@ -16,6 +16,7 @@
   journal: "Name of the Journal",
   abstract: abstract,
   keywords: ("keyword 1", "keyword 2"),
+  // date: datetime(year: 2024, month: 7, day: 12),
   paper: "a5",
   format: "preprint",
   // numcol: 1,
