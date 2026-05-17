@@ -26,6 +26,7 @@ After importing `elsearticle`, you have to initialize the template by a show rul
 * `abstract`: Abstract of the paper
 * `journal`: Name of the journal
 * `keywords`: List of keywords of the paper
+* `date`:  Date to display. Defaults to today's date if omitted.
 * `format`: Format of the paper. Possible values are `preprint`, `review`, `1p`, `3p`, `5p`
 * `paper`: Paper size. Possible values are `"a4"`, `"ansi-a"`, `"us-letter"` and `"us-legal"`
 * `numcol`: Number of columns of the paper. Possible values are 1 and 2

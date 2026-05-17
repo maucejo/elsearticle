@@ -30,6 +30,9 @@
   // Keywords
   keywords: (),
 
+  // Date to display. Defaults to today's date if omitted.
+  date: none,
+
   // For integrating future formats (1p, 3p, 5p, final)
   format: "review",
 
@@ -59,6 +62,9 @@
   let els-columns = if format.contains("1p") {1}
   else if format.contains("5p") {2}
   else {if numcol > 2 {2} else {if numcol <= 0  {1} else {numcol}}}
+
+  // Date
+  let els-date = if date != none { date } else { datetime.today() }
 
   // Heading
   set heading(numbering: "1.")
@@ -109,7 +115,7 @@
         emph(("Preprint submitted to ", journal).join())
       }
       h(1fr)
-      emph(datetime.today().display("[month repr:long] [day], [year]"))
+      emph(els-date.display("[month repr:long] [day], [year]"))
     } else {align(center)[#i]}
   }
 
