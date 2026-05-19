@@ -9,9 +9,6 @@
 
 .github
 scripts
-tests
 justfile
-docs/manual.pdf
-src/latex/*
-src/main.pdf
+docs/*
 
