@@ -18,8 +18,8 @@
     let h1 = counter(heading).get().first()
     numbering("A.1", h1, n)
   }
-  show figure.where(kind: image): set figure(numbering: numbering-fig)
-  show figure.where(kind: table): set figure(numbering: numbering-fig)
+
+  set figure(numbering: numbering-fig)
 
   isappendix.update(true)
 
