@@ -175,6 +175,7 @@
 
   // Workaround to not indent the first paragraph after an equation
   show math.equation: it => it + [#[ #[]<eq-end>]]
+  show parbreak: it => it + [#[]<eq-parbreak>]
   show par: it => {
     if it.first-line-indent.amount == 0pt {
       // Prevent recursion.
@@ -185,6 +186,11 @@
       let eq-end = query(selector(<eq-end>).before(here())).at(-1, default: none)
       if eq-end == none { return it }
       if eq-end.location().position() != here().position() { return it }
+
+      // If there is an explicit paragraph break after the equation,
+      // keep the regular indentation.
+      let eq-parbreaks = query(selector(<eq-parbreak>).after(eq-end.location()).before(here()))
+      if eq-parbreaks.len() > 0 { return it }
 
       // Paragraph start aligns with end of last equation, so recreate
       // the paragraph, but without indent.

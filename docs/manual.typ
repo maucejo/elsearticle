@@ -11,7 +11,7 @@
 
 #show: mantys(
   name: "elsearticle.typ",
-  version: "3.1.1",
+  version: "3.1.2",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -46,7 +46,7 @@ To mimic the look and feel of the original elsarticle.cls, the following fonts m
 
 To use the #package[elsearticle] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/elsearticle:3.1.1": *
+#import "@preview/elsearticle:3.1.2": *
 ```
 ]
 
