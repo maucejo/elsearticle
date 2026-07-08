@@ -156,7 +156,6 @@ To avoid unexpected behaviors, the value of the `numcol` argument is set to 1 by
 ]
 ]
 
-#pagebreak()
 #argument("line-numbering", default: false, types: "bool")[Enable line numbering in the document]
 
 == Additional features
